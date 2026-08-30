@@ -1,0 +1,38 @@
+---
+description: Ensure UI works well on both desktop and mobile viewports
+globs: app/**/*.tsx,components/**/*.tsx
+alwaysApply: false
+---
+
+# Responsive Design (Mobile + Desktop)
+
+This is a public marketing/e-commerce site — a large share of traffic will be mobile.
+Every component or page must work well at both ends of the viewport range, not just desktop.
+
+## Rules
+
+- **Mobile-first**: unprefixed Tailwind classes = the mobile layout, then layer
+  `sm:` / `md:` / `lg:` for larger screens.
+- **Grids/multi-column layouts must collapse on mobile.** Never ship a bare
+  `grid-cols-3`; write `grid-cols-1 md:grid-cols-3`.
+- **Horizontal nav bars / link lists with 3+ items need a real mobile pattern**
+  (e.g. a hamburger/drawer menu) — shrinking font size or padding until it
+  barely fits is not acceptable.
+- **Avoid fixed pixel widths** (`w-[600px]`) on containers that should reflow;
+  prefer `max-w-*` + `w-full`.
+- **Reuse the fluid `clamp()`-based tokens** already defined in
+  `app/globals.css` (`--section-y`, `--gutter`, `--nav-h`, etc.) instead of a
+  single hardcoded font-size/padding value.
+- **Touch targets** (buttons, links) should be at least ~44px tall on mobile.
+- **Test every new section at two widths** before considering it done: ~375px
+  (mobile) and ~1440px (desktop) — use the browser tool's device emulation.
+
+## Example
+
+```tsx
+// ❌ BAD — breaks below ~900px, text/columns get squeezed
+<div className="grid grid-cols-3 gap-6">
+
+// ✅ GOOD — mobile-first, expands at the md breakpoint
+<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+```

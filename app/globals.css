@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Carrom Israel design tokens
+   Ported from the Claude Design handoff (_ds/.../tokens/*.css)
+   ============================================================ */
+
+@theme {
+  /* Brand core */
+  --color-navy-900: #001b3f;
+  --color-navy-800: #002050;
+  --color-navy-700: #0b2c5e;
+  --color-navy-600: #104080;
+  --color-navy-500: #1b4e93;
+
+  --color-blue-500: #3e90bf;
+  --color-blue-400: #5aa3cc;
+  --color-blue-300: #8dc1dc;
+  --color-blue-200: #c2ddeb;
+  --color-blue-100: #e3eff6;
+
+  --color-clay-600: #c63c1e;
+  --color-clay-500: #e0472a;
+  --color-clay-400: #eb6c50;
+
+  /* Board & wood */
+  --color-maple-100: #fbf3e4;
+  --color-maple-200: #f4e4c4;
+  --color-maple-300: #ebd3a8;
+  --color-maple-400: #dcbb86;
+
+  --color-wood-500: #a07040;
+  --color-wood-600: #8a6238;
+  --color-wood-700: #6b4a2a;
+  --color-wood-800: #4a331d;
+
+  /* Editorial neutrals */
+  --color-ink-900: #100e0c;
+  --color-ink-800: #1c1815;
+  --color-ink-700: #2a241f;
+  --color-ink-600: #413931;
+
+  --color-stone-500: #7c736a;
+  --color-stone-400: #a29a90;
+  --color-taupe-300: #b4aea0;
+  --color-taupe-200: #cfc8ba;
+  --color-sand-100: #ede6d8;
+  --color-sand-50: #f7f2e8;
+
+  --color-green-600: #2c6b4f;
+  --color-amber-500: #d79a3c;
+  --color-red-600: #b3341c;
+
+  /* Semantic brand aliases (used directly as e.g. bg-brand-gold) */
+  --color-brand-primary: var(--color-blue-500);
+  --color-brand-primary-hover: #347fab;
+  --color-brand-primary-press: #2b6c92;
+  --color-brand-deep: var(--color-navy-800);
+  --color-brand-deep-hover: #00285f;
+  --color-brand-accent: var(--color-clay-500);
+  --color-brand-gold: var(--color-amber-500);
+
+  --color-bg-page: var(--color-sand-50);
+  --color-bg-page-dark: var(--color-ink-900);
+  --color-bg-band: var(--color-taupe-300);
+  --color-surface-card: #ffffff;
+  --color-surface-card-dark: var(--color-ink-800);
+  --color-surface-sunken: var(--color-sand-100);
+  --color-surface-wood: var(--color-wood-700);
+  --color-surface-board: var(--color-maple-200);
+
+  --color-text-display: var(--color-navy-800);
+  --color-text-display-invert: var(--color-sand-50);
+  --color-text-body: var(--color-ink-700);
+  --color-text-body-invert: #e8e1d5;
+  --color-text-muted: var(--color-stone-500);
+  --color-text-on-brand: #ffffff;
+
+  --color-border-hairline: rgba(16, 14, 12, 0.12);
+  --color-border-strong: rgba(16, 14, 12, 0.24);
+  --color-border-invert: rgba(247, 242, 232, 0.18);
+
+  /* Fonts */
+  --font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --font-display-latin: var(--font-display-latin), var(--font-display), Georgia, serif;
+  --font-body: var(--font-body), system-ui, sans-serif;
+  --font-ui: var(--font-body), system-ui, sans-serif;
+
+  /* Radius scale (design system) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 24px 48px -20px rgba(16, 14, 12, 0.28);
+}
+
+/* Layout tokens that stay as plain CSS vars (fluid/clamp-based, not a Tailwind scale) */
+:root {
+  --gutter: clamp(20px, 5vw, 64px);
+  --container-max: 1360px;
+  --container-text: 64ch;
+  --section-y: clamp(64px, 9vw, 136px);
+  --band-y: clamp(48px, 6vw, 96px);
+  --nav-h: 78px;
+  --grid-gap: clamp(16px, 2vw, 28px);
+
+  --overlay-scrim: linear-gradient(
+    180deg,
+    rgba(16, 14, 12, 0.72) 0%,
+    rgba(16, 14, 12, 0.32) 38%,
+    rgba(16, 14, 12, 0.86) 100%
+  );
+  --overlay-protect-bottom: linear-gradient(
+    180deg,
+    rgba(16, 14, 12, 0) 0%,
+    rgba(16, 14, 12, 0.78) 100%
+  );
+  --gradient-wood: linear-gradient(180deg, #a9793f 0%, #8a6238 100%);
+}
+
+/* ============================================================
+   shadcn/ui semantic tokens, re-themed to the Carrom Israel palette
+   ============================================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-heading: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+}
+
+:root {
+  --background: #f7f2e8; /* sand-50 */
+  --foreground: #2a241f; /* ink-700 */
+  --card: #ffffff;
+  --card-foreground: #2a241f;
+  --popover: #ffffff;
+  --popover-foreground: #2a241f;
+  --primary: #3e90bf; /* blue-500 */
+  --primary-foreground: #ffffff;
+  --secondary: #002050; /* navy-800 */
+  --secondary-foreground: #f7f2e8;
+  --muted: #ede6d8; /* sand-100 */
+  --muted-foreground: #7c736a; /* stone-500 */
+  --accent: #d79a3c; /* amber-500 / gold */
+  --accent-foreground: #100e0c; /* ink-900 */
+  --destructive: #b3341c; /* red-600 */
+  --border: rgba(16, 14, 12, 0.12);
+  --input: rgba(16, 14, 12, 0.16);
+  --ring: #3e90bf;
+  --chart-1: #3e90bf;
+  --chart-2: #d79a3c;
+  --chart-3: #2c6b4f;
+  --chart-4: #c63c1e;
+  --chart-5: #a07040;
+  --radius: 20px;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2a241f;
+  --sidebar-primary: #3e90bf;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ede6d8;
+  --sidebar-accent-foreground: #2a241f;
+  --sidebar-border: rgba(16, 14, 12, 0.12);
+  --sidebar-ring: #3e90bf;
+}
+
+.dark {
+  --background: #100e0c;
+  --foreground: #e8e1d5;
+  --card: #1c1815;
+  --card-foreground: #e8e1d5;
+  --popover: #1c1815;
+  --popover-foreground: #e8e1d5;
+  --primary: #3e90bf;
+  --primary-foreground: #ffffff;
+  --secondary: #2a241f;
+  --secondary-foreground: #e8e1d5;
+  --muted: #2a241f;
+  --muted-foreground: #a29a90;
+  --accent: #d79a3c;
+  --accent-foreground: #100e0c;
+  --destructive: #eb6c50;
+  --border: rgba(247, 242, 232, 0.18);
+  --input: rgba(247, 242, 232, 0.15);
+  --ring: #5aa3cc;
+  --chart-1: #3e90bf;
+  --chart-2: #d79a3c;
+  --chart-3: #2c6b4f;
+  --chart-4: #eb6c50;
+  --chart-5: #a07040;
+  --sidebar: #1c1815;
+  --sidebar-foreground: #e8e1d5;
+  --sidebar-primary: #3e90bf;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #2a241f;
+  --sidebar-accent-foreground: #e8e1d5;
+  --sidebar-border: rgba(247, 242, 232, 0.18);
+  --sidebar-ring: #5aa3cc;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+}
