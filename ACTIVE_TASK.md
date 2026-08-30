@@ -29,7 +29,8 @@
 - [x] Created dedicated SSH deploy key (`~/.ssh/id_ed25519_carrom_israel`) scoped to this repo only via local `git config core.sshCommand` (not global — doesn't touch other projects or your personal GitHub key)
 - [x] Deploy key added on GitHub (`carromisrael/carrom-israel`, write access) and verified (`ssh -T` confirms repo identity)
 - [x] Pushed `main` to `origin` — repo is live at `github.com/carromisrael/carrom-israel`
-- [ ] **User to confirm**: Vercel connected to the GitHub repo and deployment working
+- [x] Fixed a production-only build failure: `DirectionProvider` requires its native `dir` prop (shadcn's own docs example was misleading — passed `direction` only, which type-checks fine in dev but fails `next build`'s TS pass, i.e. exactly what Vercel runs). Also re-fixed `package.json`/`package-lock.json` name (shadcn init had silently reverted it to `scaffold-tmp`). Verified locally with `npm run build` + `npm run lint` before pushing.
+- [ ] **User to confirm**: new Vercel deployment (triggered by this push) succeeds
 
 ## Doing next (pick up in next chat)
 - [ ] Build "What is Carrom" section (`#what`) — text + looping video + stat row (see `Plan.md` §4)
