@@ -1,6 +1,8 @@
 "use client";
 
 import { MenuIcon, XIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -12,13 +14,11 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
-type NavLink = {
-  href: string;
-  label: string;
-};
+import { isNavActive, type NavLink } from "@/lib/nav";
+import { cn } from "@/lib/utils";
 
 export function MobileNav({ links }: { links: readonly NavLink[] }) {
+  const pathname = usePathname();
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -55,12 +55,17 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
         <nav className="flex flex-col gap-1 px-4 pb-6">
           {links.map((link) => (
             <SheetClose asChild key={link.href}>
-              <a
+              <Link
                 href={link.href}
-                className="flex min-h-11 items-center border-b border-transparent font-ui text-lg font-semibold text-white/[0.82] transition-colors hover:border-brand-gold hover:text-white"
+                className={cn(
+                  "flex min-h-11 items-center border-b font-ui text-lg font-semibold transition-colors hover:border-brand-gold hover:text-white",
+                  isNavActive(link.href, pathname)
+                    ? "border-brand-gold text-white"
+                    : "border-transparent text-white/[0.82]",
+                )}
               >
                 {link.label}
-              </a>
+              </Link>
             </SheetClose>
           ))}
         </nav>

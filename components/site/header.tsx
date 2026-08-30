@@ -1,14 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DesktopNav } from "@/components/site/desktop-nav";
 import { MobileNav } from "@/components/site/mobile-nav";
-
-const NAV_LINKS = [
-  { href: "/#models", label: "הדגמים" },
-  { href: "/#how", label: "איך משחקים" },
-  { href: "/#events", label: "אירועים" },
-  { href: "/#contact", label: "צרו קשר" },
-] as const;
+import { NAV_LINKS } from "@/lib/nav";
 
 export function SiteHeader() {
   return (
@@ -16,17 +11,7 @@ export function SiteHeader() {
       <div className="flex flex-1 items-center">
         <MobileNav links={NAV_LINKS} />
       </div>
-      <nav className="hidden items-center justify-center gap-6 font-ui text-[15px] font-semibold md:flex">
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="border-b border-transparent pb-[3px] text-white/[0.82] transition-colors hover:border-brand-gold hover:text-white"
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
+      <DesktopNav links={NAV_LINKS} />
       <div className="flex flex-1 justify-end">
         <Link href="/" className="flex min-h-11 items-center">
           <Image
