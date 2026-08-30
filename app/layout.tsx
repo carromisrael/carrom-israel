@@ -36,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fontDisplay.variable} ${fontBody.variable} ${fontDisplayLatin.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <DirectionProvider direction="rtl">{children}</DirectionProvider>
+        <DirectionProvider dir="rtl">{children}</DirectionProvider>
       </body>
     </html>
   );
