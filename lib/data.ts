@@ -21,7 +21,7 @@ export const products: Product[] = [
     name: "Classic",
     kicker: "8MM · מסגרת כחולה",
     price: 590,
-    image: "/assets/board-classic.jpeg",
+    image: "/assets/board-classic-card.jpeg",
     blurb:
       "הדגם שמתחילים איתו: קל להזיז, קל לאחסן, ואותו משטח מייפל שמאפשר לשחק ברצינות מהסבב הראשון.",
     thickness: "8 מ״מ",
@@ -35,7 +35,7 @@ export const products: Product[] = [
     name: "Pro",
     kicker: "12MM · מסגרת שחורה",
     price: 790,
-    image: "/assets/board-pro.jpeg",
+    image: "/assets/board-pro-card.jpeg",
     blurb:
       "ההמלצה שלנו לרוב הבתים — כבד מספיק כדי לשחק רציני, קל מספיק כדי לצאת איתו לגינה ובחזרה.",
     thickness: "12 מ״מ",
@@ -49,7 +49,7 @@ export const products: Product[] = [
     name: "Champion",
     kicker: "16MM · TOURNAMENT",
     price: 990,
-    image: "/assets/board-champion-top.jpeg",
+    image: "/assets/board-champion-card.jpeg",
     imageRotate: true,
     blurb:
       "עץ טיק מלא בגימור שמן, המשטח העבה והכבד בסדרה. הדיסקית עוצרת בדיוק במקום שהתכוונתם — לוח של טורנירים.",

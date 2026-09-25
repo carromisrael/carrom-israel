@@ -107,10 +107,27 @@
   --gutter: clamp(20px, 5vw, 64px);
   --container-max: 1360px;
   --container-text: 64ch;
-  --section-y: clamp(64px, 9vw, 136px);
+  --section-y: clamp(72px, 10vw, 152px);
   --band-y: clamp(48px, 6vw, 96px);
   --nav-h: 78px;
   --grid-gap: clamp(16px, 2vw, 28px);
+
+  /* Single-board hero tokens (starter/tokens.css). Accent is preview-only. */
+  --carrom-bg: #111214;
+  --carrom-bg-deep: #0d0e10;
+  --carrom-graphite: #383a3d;
+  --carrom-surface: #1d2024;
+  --carrom-text: #f5f3ee;
+  --carrom-muted: #cccac5;
+  --carrom-gold: #e4b66a;
+  --carrom-gold-light: #f4d187;
+  --carrom-blue: #28588f;
+  --carrom-blue-hover: #214c7d;
+  --carrom-blue-text: #89acd5;
+  --carrom-focus: #a5c9f3;
+  --carrom-border: rgba(245, 243, 238, 0.15);
+  --carrom-content-width: 1440px;
+  --carrom-font: var(--font-body), system-ui, sans-serif;
 
   --overlay-scrim: linear-gradient(
     180deg,
@@ -406,4 +423,374 @@
   .what-reveal-delay-4 {
     animation-delay: 320ms;
   }
+}
+
+/* Scroll-triggered reveal used across the home page sections */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.carrom-header.is-solid {
+  border-bottom-color: var(--carrom-border);
+  background-color: color-mix(in srgb, var(--carrom-bg-deep) 94%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.carrom-header:not(.is-solid) {
+  border-bottom-color: transparent;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* Single-board hero. Charcoal in every accent mode. Copy is the first
+   column (physical right in RTL); the board is the second (physical left). */
+.carrom-hero {
+  --board-y: 30px;
+  --board-rotation: -2deg;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin-top: calc(var(--nav-h) * -1);
+  padding-top: var(--nav-h);
+  overflow-x: clip;
+  color: var(--carrom-text);
+  /* Soft graphite pool behind the board (physical left), easing into deep
+     charcoal behind the copy. No hard spotlight edge, glow, or grain. */
+  background:
+    radial-gradient(
+      ellipse 82% 96% at 22% 48%,
+      #45484d 0%,
+      #34373c 22%,
+      #222428 48%,
+      transparent 72%
+    ),
+    linear-gradient(
+      100deg,
+      #1c1d21 0%,
+      #151618 36%,
+      #101114 66%,
+      var(--carrom-bg-deep) 100%
+    );
+  font-family: var(--carrom-font);
+}
+
+.carrom-hero-inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: min(1520px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(24px, 3.5vw, 48px);
+}
+
+.carrom-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(22rem, 36fr) minmax(0, 64fr);
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 28px);
+  width: 100%;
+}
+
+.carrom-hero-copy {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  text-align: start;
+}
+
+.carrom-hero-heading {
+  margin: 0 0 18px;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: clamp(44px, 4.5vw, 68px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--carrom-text);
+}
+
+.carrom-hero-heading-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.carrom-hero-heading-line + .carrom-hero-heading-line {
+  margin-block-start: 4px;
+  color: var(--carrom-gold);
+}
+
+.carrom-hero-description {
+  max-width: 34ch;
+  margin: 0 0 26px;
+  font-size: clamp(19px, 1.45vw, 22px);
+  line-height: 1.65;
+  color: #eeeae2;
+}
+
+.carrom-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 56px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: linear-gradient(110deg, var(--carrom-gold-light), var(--carrom-gold));
+  color: #111214;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: filter 160ms ease;
+}
+
+.carrom-hero-cta:hover {
+  filter: brightness(1.07);
+}
+
+.carrom-hero-cta:focus-visible,
+.carrom-focus:focus-visible {
+  outline: 3px solid var(--carrom-focus);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+/* Dev-preview accent modes. Public default is gold. */
+.carrom-hero[data-accent="gold"] .carrom-hero-heading-line + .carrom-hero-heading-line {
+  color: var(--carrom-gold);
+}
+
+.carrom-hero[data-accent="gold"] .carrom-hero-cta {
+  background: linear-gradient(110deg, var(--carrom-gold-light), var(--carrom-gold));
+  color: #111214;
+}
+
+.carrom-hero[data-accent="gold"] .carrom-hero-cta:hover {
+  filter: brightness(1.07);
+  background: linear-gradient(110deg, var(--carrom-gold-light), var(--carrom-gold));
+}
+
+.carrom-hero[data-accent="mixed"] .carrom-hero-heading-line + .carrom-hero-heading-line {
+  color: var(--carrom-gold);
+}
+
+.carrom-hero[data-accent="mixed"] .carrom-hero-cta,
+.carrom-hero[data-accent="blue"] .carrom-hero-cta {
+  background: var(--carrom-blue);
+  color: #fff;
+  filter: none;
+}
+
+.carrom-hero[data-accent="mixed"] .carrom-hero-cta:hover,
+.carrom-hero[data-accent="blue"] .carrom-hero-cta:hover {
+  background: var(--carrom-blue-hover);
+  filter: none;
+}
+
+.carrom-hero[data-accent="blue"] .carrom-hero-heading-line + .carrom-hero-heading-line {
+  color: var(--carrom-blue-text);
+}
+
+.carrom-hero-art {
+  min-width: 0;
+  width: 100%;
+  transform-origin: 50% 60%;
+}
+
+.carrom-hero-board {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - var(--nav-h) - 48px);
+  margin-inline: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 22px rgba(0, 0, 0, 0.32));
+}
+
+.carrom-accent-preview {
+  position: fixed;
+  z-index: 70;
+  bottom: 16px;
+  inset-inline-end: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  max-width: min(280px, calc(100vw - 32px));
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--carrom-border);
+  border-radius: 10px;
+  background: var(--carrom-surface);
+  color: var(--carrom-text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 13px;
+}
+
+.carrom-accent-preview legend {
+  padding-inline: 4px;
+  color: var(--carrom-muted);
+}
+
+.carrom-accent-preview label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .carrom-hero-art {
+    animation: carrom-board-entry 1150ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .carrom-hero-heading {
+    animation: carrom-text-entry 650ms 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .carrom-hero-description {
+    animation: carrom-text-entry 650ms 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .carrom-hero-cta {
+    animation: carrom-text-entry 650ms 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes carrom-board-entry {
+  from {
+    opacity: 0;
+    transform: translateY(var(--board-y)) rotate(var(--board-rotation)) scale(0.965);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+@keyframes carrom-text-entry {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 899px) {
+  .carrom-hero {
+    --board-y: 18px;
+    --board-rotation: -1deg;
+    display: block;
+    min-height: 0;
+  }
+  .carrom-hero-inner {
+    display: block;
+    flex: none;
+    padding-inline: 20px;
+  }
+  .carrom-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding-block: 20px 32px;
+  }
+  .carrom-hero-copy {
+    text-align: center;
+  }
+  .carrom-hero-heading {
+    margin-block-end: 16px;
+    font-size: clamp(36px, 9vw, 48px);
+    line-height: 1.12;
+  }
+  .carrom-hero-heading-line {
+    white-space: nowrap;
+  }
+  .carrom-hero-description {
+    max-width: 36ch;
+    margin: 0 auto 22px;
+    font-size: 18px;
+  }
+  .carrom-hero-cta {
+    gap: 18px;
+    min-height: 52px;
+    padding: 14px 24px;
+    font-size: 17px;
+  }
+  .carrom-hero-art {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+  .carrom-hero-board {
+    width: 100%;
+    max-height: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrom-hero-art,
+  .carrom-hero-heading,
+  .carrom-hero-description,
+  .carrom-hero-cta {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* WhatsApp float — idle pulse ring to draw the eye without being loud */
+@keyframes float-pulse {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.9);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .float-pulse-ring {
+    animation: float-pulse 2.6s cubic-bezier(0.2, 0.6, 0.2, 1) infinite;
+  }
+}
+
+/* Editorial pull-quote mark — oversized decorative glyph, no new copy */
+.pull-quote {
+  position: relative;
+}
+.pull-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.3em;
+  inset-inline-start: -0.06em;
+  font-family: var(--font-display);
+  font-size: 4.2em;
+  line-height: 1;
+  color: currentColor;
+  opacity: 0.14;
+  pointer-events: none;
 }

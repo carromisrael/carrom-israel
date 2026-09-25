@@ -4,11 +4,9 @@ export type NavLink = {
 };
 
 export const NAV_LINKS: readonly NavLink[] = [
-  { href: "/#models", label: "הדגמים" },
-  { href: "/#how", label: "איך משחקים" },
-  { href: "/online", label: "אונליין" },
+  { href: "/#models", label: "הלוחות שלנו" },
+  { href: "/#what", label: "מה זה קארום" },
   { href: "/#events", label: "אירועים" },
-  { href: "/#contact", label: "צרו קשר" },
 ];
 
 export function isNavActive(href: string, pathname: string) {

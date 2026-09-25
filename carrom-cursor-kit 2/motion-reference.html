@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="he" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Carrom — תצוגה פרטית</title>
+<style>:root {
+  --carrom-bg: #111214;
+  --carrom-bg-deep: #0D0E10;
+  --carrom-graphite: #383A3D;
+  --carrom-surface: #1D2024;
+  --carrom-text: #F5F3EE;
+  --carrom-muted: #CCCAC5;
+  --carrom-gold: #E4B66A;
+  --carrom-gold-light: #F4D187;
+  --carrom-blue: #28588F;
+  --carrom-blue-hover: #214C7D;
+  --carrom-blue-text: #89ACD5;
+  --carrom-focus: #A5C9F3;
+  --carrom-border: rgba(245,243,238,.15);
+  --carrom-content-width: 1440px;
+  --carrom-font: 'Heebo', 'Arial', sans-serif;
+}
+
+.hero {
+  --board-y: 30px;
+  --board-rotation: -2deg;
+  color: var(--carrom-text);
+  background: radial-gradient(ellipse at 25% 42%, var(--carrom-graphite) 0%, #202225 42%, var(--carrom-bg-deep) 78%);
+  font-family: var(--carrom-font);
+  overflow: clip;
+}
+.hero * { box-sizing: border-box; }
+.container { max-width: var(--carrom-content-width); margin-inline: auto; padding-inline: clamp(24px, 4vw, 64px); }
+.header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding-block: 24px; }
+.brand { grid-column: 1; justify-self: start; }
+.brand { display: inline-flex; flex-shrink: 0; }
+.logo { width: clamp(148px, 15vw, 200px); height: auto; max-height: 72px; object-fit: contain; }
+.desktopNav { grid-column: 2; display: flex; align-items: center; gap: 32px; white-space: nowrap; }
+.hero a { color: inherit; text-decoration: none; }
+.desktopNav a { font-size: 16px; }
+.desktopNav a:hover, .mobileMenu a:hover { color: var(--carrom-gold); }
+.hero a:focus-visible, .hero summary:focus-visible { outline: 3px solid var(--carrom-focus); outline-offset: 6px; border-radius: 4px; }
+.mobileMenu { display: none; }
+.layout { display: grid; grid-template-columns: minmax(0, 40fr) minmax(0, 60fr); align-items: center; gap: 24px; padding-block: clamp(32px, 5vw, 72px) clamp(48px, 6vw, 88px); }
+.copy { position: relative; z-index: 1; text-align: right; }
+.heading { font-size: clamp(48px, 5.2vw, 76px); line-height: 1.12; font-weight: 800; letter-spacing: -1.2px; margin: 0 0 28px; }
+.heading span { display: block; color: var(--carrom-gold); margin-block-start: 6px; }
+.description { font-size: clamp(18px, 1.5vw, 20px); line-height: 1.65; color: var(--carrom-muted); margin: 0 0 32px; max-width: 520px; }
+.hero .cta { display: inline-flex; justify-content: center; align-items: center; gap: 28px; min-height: 52px; padding: 15px 24px; background: linear-gradient(110deg,var(--carrom-gold-light),var(--carrom-gold)); color: #111214; border-radius: 999px; font-size: 18px; line-height: 1.4; font-weight: 700; transition: filter 160ms ease; }
+.hero .cta:hover { filter: brightness(1.07); }
+.hero[data-accent="mixed"] .cta, .hero[data-accent="blue"] .cta { background: var(--carrom-blue); color: #fff; }
+.hero[data-accent="mixed"] .cta:hover, .hero[data-accent="blue"] .cta:hover { background: var(--carrom-blue-hover); filter: none; }
+.hero[data-accent="blue"] .heading span { color: var(--carrom-blue-text); }
+.art { min-width: 0; transform-origin: 50% 60%; }
+.board { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 22px 22px rgba(0, 0, 0, .32)); }
+@media (prefers-reduced-motion: no-preference) {
+  .art { animation: boardEntry 1150ms cubic-bezier(.16,1,.3,1) both; }
+  .heading { animation: textEntry 650ms 220ms cubic-bezier(.16,1,.3,1) both; }
+  .description { animation: textEntry 650ms 360ms cubic-bezier(.16,1,.3,1) both; }
+  .cta { animation: textEntry 650ms 500ms cubic-bezier(.16,1,.3,1) both; }
+}
+@keyframes boardEntry {
+  from { opacity: 0; transform: translateY(var(--board-y)) rotate(var(--board-rotation)) scale(.965); }
+  to { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+@keyframes textEntry {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 900px) {
+  .hero { --board-y: 18px; --board-rotation: -1deg; }
+  .container { padding-inline: 20px; }
+  .header { display: flex; justify-content: space-between; padding-block: 20px; gap: 20px; position: relative; z-index: 3; }
+  .desktopNav { display: none; }
+  .mobileMenu { display: block; position: relative; }
+  .mobileMenu summary { min-height: 44px; padding: 11px 8px; font-size: 16px; }
+  .mobileMenu nav { position: absolute; inset-inline-end: 0; top: calc(100% + 8px); width: 190px; padding: 8px; border: 1px solid var(--carrom-border); background: var(--carrom-surface); border-radius: 10px; box-shadow: 0 12px 28px #0006; }
+  .mobileMenu a { display: block; padding: 12px; }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 22px; padding-block: 28px 40px; }
+  .copy { text-align: center; }
+  .heading { font-size: clamp(36px, 9vw, 48px); line-height: 1.14; margin-block-end: 18px; }
+  .description { font-size: 17px; margin: 0 auto 24px; max-width: 420px; }
+  .hero .cta { font-size: 17px; gap: 20px; }
+  .art { width: 100%; max-width: 580px; margin-inline: auto; }
+}
+
+body{margin:0;background:#111214;color:#f5f3ee;font-family:Arial,sans-serif} .previewTools{padding:16px 24px;background:#24272b;font-size:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center} .previewTools button,.previewTools select{font:inherit;padding:9px;border-radius:8px} .wordmark{font-size:25px;color:#52b9db;font-weight:bold;letter-spacing:2px} .wordmark small{display:block;font-size:11px;text-align:center} .previewNote{padding:28px;max-width:900px;margin:auto;line-height:1.7} .targets{max-width:900px;margin:auto;padding:24px} .targets section{padding:24px;border-bottom:1px solid #ffffff20} .targets a{color:#b7d4f5}
+</style>
+<div class="previewTools"><strong>תצוגה פרטית — בחירת צבעים</strong><label>הדגשות <select id="accent"><option value="gold">כפתור וכותרת בזהב</option><option value="mixed">כפתור כחול, כותרת זהב</option><option value="blue">כפתור וכותרת בכחול</option></select></label><button id="replay" type="button">הפעלת תנועה מחדש</button></div>
+<section class="hero" data-accent="gold" aria-labelledby="carrom-hero-title"><div class="container"><header class="header"><a class="brand wordmark" href="#carrom-hero-title" aria-label="לוגו טקסט זמני">CARROM<small>ISRAEL · לוגו זמני</small></a><nav class="desktopNav" aria-label="ניווט ראשי"><a href="#models">הלוחות שלנו</a><a href="#about">מה זה קארום</a><a href="#events">אירועים</a></nav><details class="mobileMenu"><summary>תפריט</summary><nav aria-label="ניווט בנייד"><a href="#models">הלוחות שלנו</a><a href="#about">מה זה קארום</a><a href="#events">אירועים</a></nav></details></header><div class="layout"><div class="copy"><h1 id="carrom-hero-title" class="heading">פחות מסכים.<span>יותר חברים.</span></h1><p class="description">הכירו את קארום — קולעים דיסקיות לפינות בעזרת האצבע, ומתחרים עם חברים ומשפחה.</p><a class="cta" href="#models">למציאת הלוח שלכם <span aria-hidden="true">←</span></a></div><div class="art"><img class="board" src="assets/champion-hero.webp" width="1536" height="1024" alt="המחשת לוח קארום מעץ עם דיסקיות" loading="eager"></div></div></div></section>
+<p class="previewNote">הדגמה מקומית: לוח נפרד עם שקיפות, טקסט חי ורקע CSS. הלוגו כאן זמני והפונט הוא פונט מערכת אם Heebo אינו מותקן. מתחת יש יעדי קישור להדגמה בלבד; הסקשנים עדיין לא עוצבו. אפשר לראות את הסקיצה המדויקת ב־<a href="references/hero-single-charcoal.png" style="color:#b7d4f5">רפרנס הלוח היחיד</a>.</p>
+<div class="targets"><section id="models"><h2>הלוחות שלנו</h2><p>יעד הדגמה ל־CTA. במימוש משתמשים בסקשן הדגמים הקיים.</p><a href="references/hero-fan-charcoal.png">צפייה בחלופת המניפה</a></section><section id="about"><h2>מה זה קארום</h2><p>יעד הדגמה בלבד.</p></section><section id="events"><h2>אירועים</h2><p>יעד הדגמה בלבד. אין אירועים מומצאים.</p></section></div>
+<script>document.querySelector('#accent').addEventListener('change',e=>document.querySelector('.hero').dataset.accent=e.target.value);document.querySelector('#replay').addEventListener('click',()=>{const h=document.querySelector('.hero');const copy=h.cloneNode(true);h.replaceWith(copy);});</script></html>

@@ -41,7 +41,7 @@ export function SiteFooter() {
             <Link
               key={link.href}
               href={link.href}
-              className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50"
+              className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50 transition-colors hover:text-brand-gold"
             >
               {link.label}
             </Link>
@@ -55,7 +55,7 @@ export function SiteFooter() {
             <Link
               key={link.label}
               href={link.href}
-              className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50"
+              className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50 transition-colors hover:text-brand-gold"
             >
               {link.label}
             </Link>
@@ -68,19 +68,19 @@ export function SiteFooter() {
           <a
             href="mailto:CarromIsrael@gmail.com"
             dir="ltr"
-            className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50"
+            className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50 transition-colors hover:text-brand-gold"
           >
             CarromIsrael@gmail.com
           </a>
           <a
             href="https://wa.me/972000000000"
-            className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50"
+            className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50 transition-colors hover:text-brand-gold"
           >
             וואטסאפ
           </a>
           <a
             href="https://instagram.com"
-            className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50"
+            className="inline-flex min-h-11 items-center font-body text-[17px] text-sand-50 transition-colors hover:text-brand-gold"
           >
             אינסטגרם
           </a>

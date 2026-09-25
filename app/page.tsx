@@ -11,7 +11,7 @@ import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader overlay />
       <Hero />
       <WhatSection />
       <ModelsSection />

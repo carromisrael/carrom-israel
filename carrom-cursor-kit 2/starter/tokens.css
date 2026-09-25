@@ -1,0 +1,17 @@
+:root {
+  --carrom-bg: #111214;
+  --carrom-bg-deep: #0D0E10;
+  --carrom-graphite: #383A3D;
+  --carrom-surface: #1D2024;
+  --carrom-text: #F5F3EE;
+  --carrom-muted: #CCCAC5;
+  --carrom-gold: #E4B66A;
+  --carrom-gold-light: #F4D187;
+  --carrom-blue: #28588F;
+  --carrom-blue-hover: #214C7D;
+  --carrom-blue-text: #89ACD5;
+  --carrom-focus: #A5C9F3;
+  --carrom-border: rgba(245,243,238,.15);
+  --carrom-content-width: 1440px;
+  --carrom-font: 'Heebo', 'Arial', sans-serif;
+}

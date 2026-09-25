@@ -1,0 +1,15 @@
+You are working inside my EXISTING Next.js repository. Implement the Carrom Israel header and hero, using this handoff. Do the implementation, not just a plan.
+
+First read carrom-cursor-kit2/design.md, ASSETS.md, IMPLEMENTATION_CHECKLIST.md, and inspect references/hero-single-charcoal.png. Read the business spec for context ONLY; backend work is out of scope for this turn.
+
+1. Inspect repository instructions, router, package manager, fonts, styles, layout/header, components and existing section IDs. Preserve unrelated changes. Reuse established conventions, dependencies and authentic logo asset. Do not scaffold a new application.
+2. Implement the SINGLE wooden board hero: charcoal/graphite CSS gradient, centered header nav, logo physically right, Hebrew text physically right and separate transparent board image physically left. Match the reference hierarchy. Keep the three-board fan as an alternative reference only.
+3. Use exact text and one CTA from design.md. Bind links to real sections; do not leave broken anchors. No extra top contact CTA. Existing WhatsApp links use the real configured number; if missing, flag the missing value without inventing it.
+4. Build real text/buttons in DOM. Never use the full screenshot as the hero background. assets/champion-hero.webp is a generated transparent development illustration. Keep it replaceable by boardSrc. Original product photos and logo reference are included for checking fidelity. If the repo has no authentic transparent logo, report it clearly and use a labeled development placeholder only until supplied.
+5. Accent is not finalized: default gold matches the reference. Implement a simple prop or existing preview setting with gold / mixed / blue modes as defined in design.md. Mixed means muted-blue button + gold heading. Blue means muted-blue button + lighter blue heading. Background remains charcoal in ALL modes. Theme controls belong only to private development previews, not the public page.
+6. Use starter/ as adaptable code, not a second header. Load tokens once using the repo's CSS convention. Resolve asset paths and real image dimensions. Use existing Next image/font conventions appropriate to installed versions. Do not install animation packages just for this effect.
+7. Responsive single-column mobile; accessible navigation, focus states and alt text. Once-only restrained CSS entrance, reduced motion final states, stable image dimensions. Validate 320, 390, 768, 1024 and 1440 widths; full product silhouette and no CTA overlap.
+8. Keep P1 private. Do not deploy, add checkout, auth, DB, CRM, pixels, live chatbot or analytics SDKs. Do not redesign remaining sections as final or fabricate business content.
+9. Run relevant existing checks and inspect desktop/mobile renders if browser tooling is available. Fix concrete issues. Report changed files, tests actually run, remaining blockers and local preview command. If repo setup prevents a check, state that explicitly.
+
+Proceed with reversible implementation choices without repeated confirmation. Stop only for a genuinely missing required input; complete all independent work first.

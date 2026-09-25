@@ -25,7 +25,7 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
         <Button
           variant="ghost"
           size="icon-lg"
-          className="size-11 text-white hover:bg-white/10 hover:text-white md:hidden"
+          className="carrom-focus size-11 text-[var(--carrom-text)] hover:bg-white/10 hover:text-[var(--carrom-text)] focus-visible:ring-0 min-[900px]:hidden"
           aria-label="פתח תפריט"
         >
           <MenuIcon className="size-6" />
@@ -34,34 +34,34 @@ export function MobileNav({ links }: { links: readonly NavLink[] }) {
       <SheetContent
         side="right"
         showCloseButton={false}
-        className="border-border-invert bg-[rgba(11,31,53,0.97)] text-white"
+        className="border-[var(--carrom-border)] bg-[var(--carrom-surface)] text-[var(--carrom-text)]"
       >
         <SheetClose asChild>
           <Button
             variant="ghost"
             size="icon-sm"
-            className="absolute top-3 end-3 size-11 text-white hover:bg-white/10 hover:text-white"
+            className="carrom-focus absolute top-3 end-3 size-11 text-[var(--carrom-text)] hover:bg-white/10 hover:text-[var(--carrom-text)] focus-visible:ring-0"
             aria-label="סגור תפריט"
           >
             <XIcon className="size-5" />
           </Button>
         </SheetClose>
-        <SheetHeader className="border-b border-border-invert pe-12">
-          <SheetTitle className="font-ui text-white">תפריט</SheetTitle>
+        <SheetHeader className="border-b border-[var(--carrom-border)] pe-12">
+          <SheetTitle className="font-ui text-[var(--carrom-text)]">תפריט</SheetTitle>
           <SheetDescription className="sr-only">
             ניווט באתר Carrom Israel
           </SheetDescription>
         </SheetHeader>
-        <nav className="flex flex-col gap-1 px-4 pb-6">
+        <nav aria-label="ניווט בנייד" className="flex flex-col gap-1 px-4 pb-6">
           {links.map((link) => (
             <SheetClose asChild key={link.href}>
               <Link
                 href={link.href}
                 className={cn(
-                  "flex min-h-11 items-center border-b font-ui text-lg font-semibold transition-colors hover:border-brand-gold hover:text-white",
+                  "carrom-focus flex min-h-11 items-center rounded-sm border-b font-ui text-lg font-semibold transition-colors hover:border-[var(--carrom-gold)] hover:text-[var(--carrom-gold)]",
                   isNavActive(link.href, pathname)
-                    ? "border-brand-gold text-white"
-                    : "border-transparent text-white/[0.82]",
+                    ? "border-[var(--carrom-gold)] text-[var(--carrom-text)]"
+                    : "border-transparent text-[var(--carrom-text)]/82",
                 )}
               >
                 {link.label}

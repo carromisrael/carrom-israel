@@ -10,7 +10,10 @@ export function DesktopNav({ links }: { links: readonly NavLink[] }) {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden items-center justify-center gap-4 font-ui text-[14px] font-semibold lg:gap-6 lg:text-[15px] md:flex">
+    <nav
+      aria-label="ניווט ראשי"
+      className="hidden items-center justify-center gap-10 font-ui text-lg font-semibold whitespace-nowrap min-[900px]:flex"
+    >
       {links.map((link) => {
         const active = isNavActive(link.href, pathname);
         return (
@@ -18,10 +21,8 @@ export function DesktopNav({ links }: { links: readonly NavLink[] }) {
             key={link.href}
             href={link.href}
             className={cn(
-              "border-b pb-[3px] transition-colors hover:border-brand-gold hover:text-white",
-              active
-                ? "border-brand-gold text-white"
-                : "border-transparent text-white/[0.82]",
+              "carrom-focus rounded-sm py-2 text-[var(--carrom-text)] transition-colors hover:text-[var(--carrom-gold)]",
+              active && "text-white",
             )}
           >
             {link.label}

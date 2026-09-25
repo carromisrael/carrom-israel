@@ -1,0 +1,22 @@
+{
+  "ASSETS.md": "a2156339495013341ae0b040ab04318beefcf5c24bcf60ff085a42a6eb7b6f43",
+  "CURSOR_PROMPT.md": "5773dcf85099508a93a2e951def8c8fc0f9cde5a121b63ad97f7814f2287fd6e",
+  "IMPLEMENTATION_CHECKLIST.md": "89f378bd484a3773e13bad9ef6e1fba03a24b37de108dffff787556ccb639f10",
+  "README.md": "b52b4e8d9089a48e87488eac23f83b99a5973e25236d0b94b8d852d27d6f701f",
+  "VALIDATION.md": "e8fc3454a66ca7f2a69a904eb9fdddd4417b3d35c88a8aafe00fb52bf8d49cf8",
+  "assets/champion-hero.png": "4b99c9e1966641533e2ccc278105f5f2c74b284e57040a2eeab00d6a496ac58e",
+  "assets/champion-hero.webp": "da564698d9b943c4796d59a028b0b86e4a5bd7f168cc57f7d0313acc6a848655",
+  "assets/logo-original.jpg": "e7468a3c729a2306a4b2e520605d2a6780fcdb0fe9b7cbed4b12f8588ed7f258",
+  "assets/originals/champion.jpg": "522def4fed47bd14cdac4327601acc2f9e863d937eaaaca65c6c9e604bfb40cf",
+  "assets/originals/classic.jpg": "5ba05e6ce159955e9e8fad1c8ac0fb89263ea56abb4fe3b1adfe80f24d033278",
+  "assets/originals/pro.jpg": "994c2dbd0fdee4513551c5e55f6a32043755042ff129aa9fde56ae9bd586b4fc",
+  "design.md": "e9ffa94642c1706dc70ecf8bc312e497ba609c1b9d02c97427251c80de1ff58f",
+  "docs/carrom-sales-platform-spec.md": "aabf7eaa6eddbe5fa672e1a45f6fafdcd741236576cdc3349f7a03008d8d2bc4",
+  "docs/chatbot-addon.md": "3a8e8e5724951d7150ae7573c65abcc2c0913d3eb17c29e0dbd34910eba9f006",
+  "motion-reference.html": "93f7788ece598d08971345ce901363bfd7f8aa00e30cc0df0df7094492b8223b",
+  "references/hero-fan-charcoal.png": "df375b806810b1b6ec3dc2daed4e0f38ae9d127261eca0ce7c372aebe8acc508",
+  "references/hero-single-charcoal.png": "86bd80252bb373b16d8951c7ec04560cf0341ad5a2fee579d786bb5b9c73c77b",
+  "starter/CarromHero.module.css": "f77a7bc3e23f32ea10ca8b75fbfc31f17abd55e5c11710be2d1fe6db76a94344",
+  "starter/CarromHero.tsx": "597d9acbfc51b8f32059e124699e90541ad62e3235c9095f47ff0465a8afcac9",
+  "starter/tokens.css": "53cc3bb66d2ceb020521114c1a4c4fc41755290ca82d8caf1acb0f04b3ff207c"
+}

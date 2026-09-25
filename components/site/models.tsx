@@ -1,4 +1,5 @@
 import { FlipCard } from "@/components/site/flip-card";
+import { Reveal } from "@/components/site/reveal";
 import { formatPrice, products } from "@/lib/data";
 
 export function ModelsSection() {
@@ -8,31 +9,36 @@ export function ModelsSection() {
       className="scroll-mt-[var(--nav-h)] bg-maple-400 px-[var(--gutter)] py-[var(--section-y)]"
     >
       <div className="mx-auto max-w-[var(--container-max)]">
-        <div className="flex flex-col items-center gap-4 text-center">
+        <Reveal className="flex flex-col items-center gap-4 text-center">
+          <span className="h-px w-12 bg-brand-gold" aria-hidden />
           <h2 className="m-0 font-ui text-[clamp(40px,4.6vw,72px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-display">
             בחרו את הדגם שלכם
           </h2>
-        </div>
+        </Reveal>
         <div className="mt-12 grid grid-cols-1 gap-[var(--grid-gap)] md:grid-cols-3">
-          {products.map((product) => (
-            <FlipCard
-              key={product.id}
-              name={product.name}
-              kicker={product.kicker}
-              priceLabel={formatPrice(product.price)}
-              image={product.image}
-              imageAlt={product.name}
-              imageRotate={product.imageRotate}
-              blurb={product.blurb}
-              specs={[
-                { label: "עובי הלוח", value: product.thickness },
-                { label: "מסגרת", value: product.frame },
-                { label: "משקל", value: product.weight },
-                { label: "מידות", value: product.size },
-              ]}
-              href={`/products#${product.id}`}
-              backClassName={product.backBg}
-            />
+          {products.map((product, index) => (
+            <div key={product.id} className={index === 1 ? "md:-translate-y-6" : undefined}>
+              <Reveal delay={index * 0.1}>
+                <FlipCard
+                  name={product.name}
+                  kicker={product.kicker}
+                  priceLabel={formatPrice(product.price)}
+                  image={product.image}
+                  imageAlt={product.name}
+                  imageRotate={product.imageRotate}
+                  blurb={product.blurb}
+                  specs={[
+                    { label: "עובי הלוח", value: product.thickness },
+                    { label: "מסגרת", value: product.frame },
+                    { label: "משקל", value: product.weight },
+                    { label: "מידות", value: product.size },
+                  ]}
+                  href={`/products#${product.id}`}
+                  backClassName={product.backBg}
+                  featured={index === 1}
+                />
+              </Reveal>
+            </div>
           ))}
         </div>
       </div>

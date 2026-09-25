@@ -5,8 +5,12 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="וואטסאפ"
-      className="fixed start-[clamp(16px,2vw,28px)] bottom-[clamp(16px,2vw,28px)] z-[60] flex size-14 items-center justify-center rounded-pill bg-[#25D366] shadow-[0_10px_30px_-12px_rgba(16,14,12,.45)] transition-[transform,box-shadow] duration-[220ms] ease-[cubic-bezier(.2,.6,.2,1)] hover:-translate-y-1 hover:shadow-[0_14px_36px_-12px_rgba(16,14,12,.55)] active:scale-[0.975]"
+      className="group fixed start-[clamp(16px,2vw,28px)] bottom-[clamp(16px,2vw,28px)] z-[60] flex size-14 items-center justify-center rounded-pill bg-[#25D366] shadow-[0_10px_30px_-12px_rgba(16,14,12,.45)] transition-[transform,box-shadow] duration-[220ms] ease-[cubic-bezier(.2,.6,.2,1)] hover:-translate-y-1 hover:shadow-[0_14px_36px_-12px_rgba(16,14,12,.55)] active:scale-[0.975]"
     >
+      <span
+        aria-hidden
+        className="float-pulse-ring pointer-events-none absolute inset-0 rounded-pill bg-[#25D366] group-hover:hidden"
+      />
       <svg
         viewBox="0 0 24 24"
         width="30"

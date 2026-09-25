@@ -22,6 +22,7 @@ export type FlipCardProps = {
   specs: FlipCardSpec[];
   href: string;
   backClassName: string;
+  featured?: boolean;
 };
 
 export function FlipCard({
@@ -35,6 +36,7 @@ export function FlipCard({
   specs,
   href,
   backClassName,
+  featured,
 }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
   const pointerType = useRef<"mouse" | "touch" | "pen" | "">("");
@@ -54,29 +56,48 @@ export function FlipCard({
 
   return (
     <div
-      className="flip-card"
+      className="flip-card relative"
       data-flipped={flipped ? "true" : undefined}
     >
-      <div className="flip-inner">
+      {featured && (
+        <span className="pointer-events-none absolute -top-3 start-1/2 z-10 -translate-x-1/2 rounded-full bg-brand-gold px-4 py-1.5 font-ui text-xs font-bold tracking-[0.04em] text-ink-900 shadow-card">
+          הכי נמכר
+        </span>
+      )}
+      <div
+        className={cn(
+          "flip-inner rounded-2xl",
+          featured && "ring-2 ring-brand-gold/70 ring-offset-2 ring-offset-maple-400",
+        )}
+      >
         <button
           type="button"
-          className="flip-face wood-grain flex cursor-pointer flex-col overflow-hidden rounded-lg border-[3px] border-wood-800 p-0 text-start shadow-card"
+          className="flip-face wood-grain flex cursor-pointer flex-col overflow-hidden rounded-2xl border-[3px] border-wood-800 p-0 text-start shadow-card"
           aria-expanded={flipped}
           aria-label={`${name}: ${flipped ? "הסתר פרטים" : "הצג פרטים"}`}
           onPointerDown={handlePointerDown}
           onClick={handleFrontClick}
         >
-          <div className="relative h-[340px] w-full shrink-0">
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              sizes="(min-width: 768px) 33vw, 100vw"
-              className={cn(
-                "object-cover object-center",
-                imageRotate && "rotate-180",
-              )}
-            />
+          <div className="h-[340px] w-full shrink-0 p-4 pb-3">
+            <div className="relative h-full w-full overflow-hidden rounded-xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.15)]">
+              <div className={cn("absolute inset-0", imageRotate && "rotate-180")}>
+                <Image
+                  src={image}
+                  alt={imageAlt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover object-center"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-wood-800/90 to-transparent"
+                />
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/20 to-transparent"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex flex-col gap-2 px-6 py-[22px]">
             <span className="font-ui text-xs font-semibold tracking-[0.18em] text-sand-50/60 uppercase">
@@ -88,7 +109,7 @@ export function FlipCard({
               </span>
               <span
                 dir="ltr"
-                className="font-ui text-[22px] font-bold text-brand-gold"
+                className="font-ui text-[26px] font-bold text-brand-gold"
               >
                 {priceLabel}
               </span>
@@ -102,7 +123,7 @@ export function FlipCard({
 
         <div
           className={cn(
-            "flip-face flip-back flex flex-col gap-[18px] overflow-hidden rounded-lg border border-border-hairline p-[clamp(24px,3vw,34px)] text-[#E8E1D5] shadow-card",
+            "flip-face flip-back flex flex-col gap-[18px] overflow-hidden rounded-2xl border border-border-hairline p-[clamp(24px,3vw,34px)] text-[#E8E1D5] shadow-card",
             backClassName,
           )}
           onPointerDown={handlePointerDown}

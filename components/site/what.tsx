@@ -1,11 +1,4 @@
 import Link from "next/link";
-import {
-  Backpack,
-  HeartHandshake,
-  Target,
-  UsersRound,
-  type LucideIcon,
-} from "lucide-react";
 
 import { CarromClip } from "@/components/site/carrom-clip";
 import { cn } from "@/lib/utils";
@@ -24,47 +17,24 @@ const POCKETS = [
   "bottom-2 end-2",
 ] as const;
 
-const FEATURES: {
-  title: string;
-  body: string;
-  icon: LucideIcon;
-  tone: "navy" | "blue" | "clay" | "wood";
-}[] = [
+const FACTS = [
   {
     title: "משחק חברתי אמיתי",
     body: "שחקו בלי מסכים — מקום לצחוק ולתחרות טובה.",
-    icon: HeartHandshake,
-    tone: "navy",
   },
   {
     title: "חיבור בין דורות",
     body: "המשחק שמחבר סבא, אבא וילדים סביב אותו לוח.",
-    icon: UsersRound,
-    tone: "blue",
   },
   {
     title: "קל ללמוד, כיף לשלוט",
     body: "חוקים פשוטים לכל גיל, משחק שמאחד גם מנצחים.",
-    icon: Target,
-    tone: "clay",
   },
   {
     title: "קומפקטי ונייד",
     body: "מתקפל ונכנס לכל תיק — תמיד בדרך לעוד משחק.",
-    icon: Backpack,
-    tone: "wood",
   },
-];
-
-const TONE: Record<
-  (typeof FEATURES)[number]["tone"],
-  { well: string; icon: string }
-> = {
-  navy: { well: "bg-navy-800", icon: "text-amber-500" },
-  blue: { well: "bg-blue-100", icon: "text-blue-500" },
-  clay: { well: "bg-clay-500/12", icon: "text-clay-500" },
-  wood: { well: "bg-maple-200", icon: "text-wood-700" },
-};
+] as const;
 
 export function WhatSection() {
   return (
@@ -81,9 +51,9 @@ export function WhatSection() {
         className="pointer-events-none absolute -end-20 bottom-0 size-[min(50vw,340px)] rounded-full bg-blue-100/50 blur-3xl"
       />
 
-      <div className="relative z-10 mx-auto flex max-w-[var(--container-max)] flex-col gap-10">
-        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:grid-rows-[auto_1fr] md:gap-x-12 md:gap-y-6">
-          <div className="what-reveal order-1 flex flex-col">
+      <div className="relative z-10 mx-auto flex max-w-[var(--container-max)] flex-col gap-16">
+        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-x-16">
+          <div className="what-reveal flex flex-col">
             <p className="m-0 flex items-center gap-3 font-ui text-[13px] font-semibold tracking-[0.18em] text-wood-600">
               <span className="h-px w-7 bg-brand-gold" aria-hidden />
               מה זה קארום
@@ -91,7 +61,7 @@ export function WhatSection() {
             <h2 className="mt-3 font-display text-[clamp(1.85rem,4vw,3rem)] leading-[1.15] font-medium text-navy-800">
               המשחק שכובש את ישראל
             </h2>
-            <p className="mt-5 m-0 font-body text-[17px] leading-[1.75] text-text-body">
+            <p className="pull-quote mt-6 m-0 ps-2 font-display text-[clamp(19px,2.1vw,23px)] leading-[1.55] font-light text-navy-800">
               קארום הוא משחק לוח קלאסי שמקורו בהודו, ל־2–4 שחקנים. הכל על הלוח —
               אין אפליקציות, אין מסכים. רק אצבעות, דיסקיות, ורגעים אמיתיים
               שנשארים.
@@ -103,46 +73,76 @@ export function WhatSection() {
             </p>
           </div>
 
-          <figure className="what-reveal what-reveal-delay-1 order-2 m-0 mx-auto w-full max-w-md md:row-span-2 md:mx-0 md:max-w-none">
+          <figure className="what-reveal what-reveal-delay-1 relative mx-auto w-full max-w-[420px] md:mx-0">
             <div
-              className="relative rounded-xl p-[10px] shadow-card"
+              aria-hidden
+              className="pointer-events-none absolute -inset-5 -z-10 rounded-[28px] bg-gradient-to-br from-blue-200/50 via-transparent to-brand-gold/25 opacity-70 blur-2xl"
+            />
+            <div
+              className="relative -rotate-1 rounded-md p-[10px] shadow-card transition-transform duration-500 ease-out hover:rotate-0"
               style={{
                 background:
                   "linear-gradient(145deg, #dcbb86 0%, #a07040 42%, #6b4a2a 100%)",
               }}
             >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-[10px] rounded-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.35)]"
+              />
               {POCKETS.map((pos) => (
                 <span
                   key={pos}
                   aria-hidden
                   className={cn(
-                    "pointer-events-none absolute z-10 size-4 rounded-full bg-ink-900 ring-[3px] ring-maple-300",
+                    "pointer-events-none absolute z-10 size-3.5 rounded-full bg-ink-900 shadow-[inset_0_2px_3px_rgba(0,0,0,0.75)] ring-[3px] ring-maple-300",
                     pos,
                   )}
                 />
               ))}
-              <div className="relative aspect-square w-full overflow-hidden rounded-[18px] bg-ink-900">
+              <div className="relative aspect-square w-full overflow-hidden rounded-sm bg-ink-900">
                 <CarromClip />
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white/18 to-transparent"
+                />
               </div>
             </div>
           </figure>
-
-          <ul className="what-reveal what-reveal-delay-2 order-3 m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
-            {FEATURES.map((feature) => (
-              <FeatureCard key={feature.title} feature={feature} />
-            ))}
-          </ul>
         </div>
 
-        <div className="what-reveal what-reveal-delay-3 flex flex-col items-center gap-5">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-8 border-t border-border-hairline pt-10 sm:grid-cols-4">
+          {FACTS.map((fact, i) => (
+            <div
+              key={fact.title}
+              className="what-reveal flex flex-col gap-2.5"
+              style={{ animationDelay: `${200 + i * 90}ms` }}
+            >
+              <span
+                dir="ltr"
+                className="inline-flex w-fit items-center rounded-full border border-border-hairline bg-white/70 px-2.5 py-1 font-ui text-[11px] font-semibold tracking-[0.14em] text-wood-600"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="m-0 font-display text-[1.05rem] leading-snug font-medium text-navy-800">
+                {fact.title}
+              </h3>
+              <p className="m-0 font-body text-[14px] leading-relaxed text-text-body">
+                {fact.body}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center gap-5">
           <dl className="m-0 grid w-full grid-cols-2 gap-y-5 rounded-xl border border-border-hairline bg-white/70 px-3 py-5 md:flex md:max-w-3xl md:items-stretch md:justify-center md:px-2">
             {STATS.map((stat, i) => (
               <div
                 key={stat.label}
                 className={cn(
-                  "flex min-w-0 flex-col items-center gap-1 px-3 md:min-w-[5.5rem] md:flex-1 md:px-4",
+                  "what-reveal flex min-w-0 flex-col items-center gap-1 px-3 md:min-w-[5.5rem] md:flex-1 md:px-4",
                   i > 0 && "md:border-s md:border-border-hairline",
                 )}
+                style={{ animationDelay: `${560 + i * 70}ms` }}
               >
                 <dt className="order-2 font-ui text-xs font-semibold tracking-[0.16em] text-text-muted">
                   {stat.label}
@@ -158,42 +158,13 @@ export function WhatSection() {
           </dl>
           <Link
             href="/how-to-play"
-            className="inline-flex min-h-11 items-center font-ui text-base font-semibold text-brand-primary border-b border-current pb-0.5 transition-colors hover:text-brand-primary-hover"
+            className="what-reveal inline-flex min-h-11 items-center font-ui text-base font-semibold text-brand-primary border-b border-current pb-0.5 transition-colors hover:text-brand-primary-hover"
+            style={{ animationDelay: "900ms" }}
           >
             חוקי המשחק בעברית ←
           </Link>
         </div>
       </div>
     </section>
-  );
-}
-
-function FeatureCard({
-  feature,
-}: {
-  feature: (typeof FEATURES)[number];
-}) {
-  const Icon = feature.icon;
-  const tone = TONE[feature.tone];
-
-  return (
-    <li className="flex h-full gap-3.5 rounded-xl border border-border-hairline bg-white/85 p-4 transition-[transform,box-shadow] duration-300 motion-safe:hover:-translate-y-0.5 hover:shadow-card">
-      <div
-        className={cn(
-          "mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-md",
-          tone.well,
-        )}
-      >
-        <Icon className={cn("size-5", tone.icon)} strokeWidth={1.6} aria-hidden />
-      </div>
-      <div className="min-w-0">
-        <h3 className="m-0 font-display text-[1.05rem] leading-snug font-medium text-navy-800">
-          {feature.title}
-        </h3>
-        <p className="mt-1.5 mb-0 font-body text-[14px] leading-relaxed text-text-body">
-          {feature.body}
-        </p>
-      </div>
-    </li>
   );
 }
