@@ -54,7 +54,9 @@ amber:  500 #D79A3C   (gold accent / stars)
 green:  600 #2C6B4F
 red:    600 #B3341C
 ```
-**Semantic roles**: page bg = `sand-50`, dark sections = `ink-900` / `navy-800`, brand accent = `blue-500`, gold accent (CTAs/prices) = `amber-500`, wood texture = `wood-700/800`.
+**Semantic roles (original handoff, still present in `app/globals.css`)**: page bg = `sand-50`, dark sections = `ink-900` / `navy-800`, brand accent = `blue-500`, gold accent (CTAs/prices) = `amber-500`, wood texture = `wood-700/800`.
+
+**Home palette update (2026-09-27, documentation only — not applied to the UI):** the near-white / ivory section field (`sand-50`) is not the chosen direction. The hero stays locked on the `--carrom-*` charcoal tokens. The next section, “What is Carrom?”, is confirmed as muted petrol `#2D5053` with existing `--carrom-text` and a proposed restrained gold `--carrom-gold-muted` `#D3AF72`. Later section rhythms are exploratory. Full record: `carrom-cursor-kit 2/design.md` § Page palette.
 
 ### Spacing / radius (map to Tailwind `theme.extend`)
 - Container max-width: `1360px`, gutter: `clamp(20px,5vw,64px)`

@@ -1,5 +1,5 @@
 # Carrom Israel — design.md v2
-Updated 2026-09-24. Integration brief for the EXISTING Next.js project.
+Updated 2026-09-27. Integration brief for the EXISTING Next.js project.
 
 ## Decision status and precedence
 Latest user instructions override this file. This file governs visual implementation; docs/carrom-sales-platform-spec.md governs the business roadmap. That earlier specification is preserved as a historical planning document; its design wording does not override v2.
@@ -71,8 +71,71 @@ Reduced motion: all final states visible immediately. Header never animates. No 
 assets/champion-hero.png and .webp are NEW transparent AI-generated illustrations based on the chosen single-board reference, not exact original product photography. Markings and wood grain differ from stock; compare with assets/originals before release. They are suitable for private UI development. Replace via boardSrc later without changing layout. Do not infer product specifications from generated images.
 assets/logo-original.jpg is authentic supplied logo reference WITH A WHITE BACKGROUND. Prefer the authentic transparent/SVG logo already in the project. Do not use a generated or typed approximation as final branding. Preview uses an explicitly labeled text stand-in until logoSrc is supplied.
 
+## Page palette (2026-09-27)
+
+Documentation only. Do not apply these decisions in `app/globals.css` or in section components until a later implementation pass. The scroll-preview HTML files are palette and scrolling references. Their hero is a placeholder. Their later sections, copy, product illustrations, icons, and imagery are not approved production designs. Do not import that CSS or overwrite existing tokens with its placeholder styling.
+
+Reference files (outside the repo):
+
+- `~/Downloads/carrom-scroll-preview.html` — exploratory rhythm A
+- `~/Downloads/carrom-scroll-preview-b.html` — exploratory rhythm B
+
+Both files share the same root swatches: coal `#14191F`, petrol `#2D5053`, gold `#D3AF72`, ink `#F4F0E8`. Those names are the preview’s. Project tokens keep the `--carrom-*` names already used in `app/globals.css`.
+
+### Confirmed
+
+**Hero is temporarily locked.** Preserve the current hero background, gradient, typography, assets, and layout. The preview hero (radial `#38434E` over `#11151A`) does not replace it. The existing hero charcoal stays `--carrom-bg` `#111214` and `--carrom-bg-deep` `#0D0E10`. The open gold / mixed / blue hero-accent comparison above is unchanged.
+
+**“What is Carrom?” (`#what`), the section immediately after the hero.** Background is muted petrol.
+
+| Token | Value | Role |
+| --- | --- | --- |
+| `--carrom-petrol` | `#2D5053` | Confirmed background for `#what`. Proposed name only — not added to CSS yet. |
+| `--carrom-text` | `#F5F3EE` | Reuse for warm off-white text on petrol. |
+| `--carrom-muted` | `#CCCAC5` | Reuse for secondary text on petrol. |
+| `--carrom-gold-muted` | `#D3AF72` | Proposed restrained warm-gold accent. Not added to CSS yet. |
+
+`--carrom-text` is the close match for the reference ink `#F4F0E8` (a few RGB steps apart) and is about 7.9:1 on `#2D5053`, which is enough for body text. Do not add a second off-white token.
+
+Do not reuse `--carrom-gold` (`#E4B66A`) for this accent. That token stays the locked hero gold. It is brighter than the restrained reference `#D3AF72`. `--carrom-gold-muted` on petrol is about 4.3:1: enough for large type and for icon strokes (3:1), short of 4.5:1 for small body text. Body copy stays on `--carrom-text` or `--carrom-muted`.
+
+**Feel.** Warm and premium: charcoal, petrol, natural wood, and subtle gold. Existing wood and maple tokens stay as they are. This note does not retint them.
+
+**Rejected.** A near-white or ivory section field (the earlier sand page background, `#F7F2E8` / `sand-50`) felt too white. It is not the direction for `#what`.
+
+**Hebrew RTL, when `#what` is built.** Right-align the text. Place each leading benefit icon on the physical right of its text — the start side in RTL. Do not hang those icons on the physical left.
+
+### Exploratory — neither rhythm is approved
+
+Video placement, final section layout, and copy after the hero are still open. Only the hero (locked) and the petrol introduction are confirmed. Do not treat charcoal-as-default, or any alternating band sequence, as decided.
+
+**A. Mostly dark** (`carrom-scroll-preview.html`): charcoal hero → petrol introduction → charcoal products (`#1B2128`, cards `#252D35`) → gray-green social (`#465956`) → dark FAQ (`#242C33`).
+
+**B. Greater tonal contrast** (`carrom-scroll-preview-b.html`): charcoal hero → petrol introduction → warm taupe products (`#ADA08D`, text `#192129`, cards `#BFB3A0`) → charcoal social (`#171E24` with a `#303B41` glow) → petrol-toned FAQ (`#31494B`).
+
+Proposed names if a rhythm is approved later. Do not add them to CSS now. Option A’s product charcoal `#1B2128` is close to the existing `--carrom-surface` `#1D2024`; prefer reusing `--carrom-bg` / `--carrom-surface` if A is chosen, unless a separate bluer charcoal is explicitly wanted.
+
+| Proposed token | Value | Would mean, only if that option is chosen |
+| --- | --- | --- |
+| `--carrom-sage` | `#465956` | A: gray-green social band |
+| `--carrom-faq-dark` | `#242C33` | A: dark FAQ band |
+| `--carrom-taupe` | `#ADA08D` | B: warm taupe product band |
+| `--carrom-ink-deep` | `#192129` | B: text on taupe |
+| `--carrom-taupe-raised` | `#BFB3A0` | B: product cards on taupe |
+| `--carrom-petrol-deep` | `#31494B` | B: petrol-toned FAQ |
+
+Option B’s social field can stay on the existing charcoal tokens plus a quiet `#303B41` glow. It does not need its own token unless that glow becomes a repeated surface.
+
+### Still open
+
+- Rhythm A versus rhythm B for products, social, and FAQ.
+- Video placement inside “What is Carrom?”.
+- Final layout and real copy for every section after the hero.
+- Whether any preview icons, product art, or photography is used.
+- Hero accent (gold / mixed / blue) stays the separate open comparison above.
+
 ## Remaining page
-What is Carrom, model selection, events and testimonials are not visually approved. Reuse shared typography, spacing and button semantics, not compulsory alternating section colors. Charcoal is default; optional other surfaces require review. No fabricated quotes, prices, event dates, review scores, stock counts or best-seller badges.
+Model selection, events, and testimonials are not visually approved. “What is Carrom?” has a confirmed petrol background and text pairing only; its layout, video, icons, and copy are not approved. No fabricated quotes, prices, event dates, review scores, stock counts, or best-seller badges.
 Chat widget is a future optional channel: see docs/chatbot-addon.md, not implemented in P1.
 
 ## Acceptance
