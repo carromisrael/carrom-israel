@@ -105,6 +105,12 @@ Do not reuse `--carrom-gold` (`#E4B66A`) for this accent. That token stays the l
 
 **Hebrew RTL, when `#what` is built.** Right-align the text. Place each leading benefit icon on the physical right of its text — the start side in RTL. Do not hang those icons on the physical left.
 
+**Layout: implemented 2026-09-27.** Copy is now real (title, lede, explanation, three benefits, secondary guide link) and lives in `components/site/what.tsx`. Two comparison layouts were built (video beside the copy vs. media centered below it); the user chose **media centered** after comparing both live in the site, so that is now the only layout — the dev toggle and the side-by-side variant were removed.
+
+Media ended up as the **static photo** `board-setup.jpeg`, not `carrom-clip.mp4`: playing that clip revealed it is the AI-generated neon "CARROM ISRAEL" logo bumper already flagged as a bad asset (garish blue glow, no real board footage, off-brand), not gameplay footage — so the click-to-play video treatment was dropped along with it. The photo is shown in a capped `560px` square (`aspect-square`, `object-cover`) — small enough to sit comfortably under the intro, still avoiding any crop into the board's corner pockets. If real gameplay video is shot later, click-to-play can be reintroduced.
+
+Benefit icons sit on the physical right of each text block (icon first in DOM, normal RTL flex order), a plain leading-icon pairing — not the "icon past the end of the text" placement the reference photo seemed to show; the user corrected this back to the standard RTL leading-icon rule above. The section heading uses the hero's actual big-headline recipe (`font-body`/Assistant, weight 800, tight tracking) rather than the serif `font-display` used by other interior section titles, to read with the same weight as the reference. The guide link stays hidden until a real `guideHref` is supplied.
+
 ### Exploratory — neither rhythm is approved
 
 Video placement, final section layout, and copy after the hero are still open. Only the hero (locked) and the petrol introduction are confirmed. Do not treat charcoal-as-default, or any alternating band sequence, as decided.
@@ -129,10 +135,10 @@ Option B’s social field can stay on the existing charcoal tokens plus a quiet 
 ### Still open
 
 - Rhythm A versus rhythm B for products, social, and FAQ.
-- Video placement inside “What is Carrom?”.
-- Final layout and real copy for every section after the hero.
-- Whether any preview icons, product art, or photography is used.
+- Final layout and real copy for every section after `#what`.
+- Whether any preview icons, product art, or photography is used for those later sections.
 - Hero accent (gold / mixed / blue) stays the separate open comparison above.
+- The real target for the "how to play" guide link (currently hidden — no `guideHref` set).
 
 ## Remaining page
 Model selection, events, and testimonials are not visually approved. “What is Carrom?” has a confirmed petrol background and text pairing only; its layout, video, icons, and copy are not approved. No fabricated quotes, prices, event dates, review scores, stock counts, or best-seller badges.

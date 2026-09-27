@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <SiteHeader overlay />
       <Hero />
-      <WhatSection />
+      <WhatSection guideHref="/how-to-play" />
       <ModelsSection />
       <StorySection />
       <EventsSection />
