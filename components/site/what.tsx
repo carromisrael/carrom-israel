@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowLeftIcon, HandIcon, TargetIcon, UsersIcon } from "lucide-react";
 
@@ -34,9 +34,103 @@ const WHAT_CONTENT = {
     },
   ] satisfies Benefit[],
   guideLabel: "איך משחקים?",
+  stats: [
+    { value: "2-4", label: "שחקנים" },
+    { value: "+15", label: "דקות" },
+    { value: "+4", label: "גיל" },
+  ],
 } as const;
 
-const BOARD_VIDEO = "/assets/WhatsApp%20Video%202026-08-12%20at%2020.41.56.mp4";
+const BOARD_VIDEO = "/assets/carrom-video-1.mp4";
+
+/** Counts up on first reveal, then settles on ∞ — "hours of fun" has no ceiling. */
+function EndlessHoursStat() {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [display, setDisplay] = useState("0");
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setDisplay("∞");
+      return;
+    }
+
+    let raf = 0;
+    const runCountUp = () => {
+      const duration = 1400;
+      const target = 120;
+      const start = performance.now();
+
+      const tick = (now: number) => {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        if (t < 1) {
+          setDisplay(String(Math.round(eased * target)));
+          raf = requestAnimationFrame(tick);
+        } else {
+          setDisplay("∞");
+        }
+      };
+      raf = requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          runCountUp();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.6 },
+    );
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {display}
+    </span>
+  );
+}
+
+function StatsStrip() {
+  return (
+    <div className="mt-6 w-full border-t border-[color:var(--carrom-gold-muted)]/25 pt-6 md:mt-8 md:pt-8">
+      <ul className="m-0 grid list-none grid-cols-2 gap-y-5 p-0 sm:grid-cols-4 sm:items-center sm:gap-0">
+        {WHAT_CONTENT.stats.map(({ value, label }, i) => (
+          <li
+            key={label}
+            className={cn(
+              "flex flex-col items-center gap-1 sm:px-4",
+              i > 0 && "sm:border-s sm:border-[color:var(--carrom-gold-muted)]/25",
+            )}
+          >
+            <span className="font-body text-[clamp(26px,2.8vw,36px)] font-extrabold leading-none text-[var(--carrom-gold-light)]">
+              {value}
+            </span>
+            <span className="font-ui text-[13px] font-semibold text-[var(--carrom-muted)]">
+              {label}
+            </span>
+          </li>
+        ))}
+        <li className="flex flex-col items-center gap-1 sm:border-s sm:border-[color:var(--carrom-gold-muted)]/25 sm:px-4">
+          <span className="font-body text-[clamp(26px,2.8vw,36px)] font-extrabold leading-none text-[var(--carrom-gold-light)]">
+            <EndlessHoursStat />
+          </span>
+          <span className="font-ui text-[13px] font-semibold text-[var(--carrom-muted)]">
+            שעות הנאה
+          </span>
+        </li>
+      </ul>
+    </div>
+  );
+}
 
 function WhatBenefits() {
   return (
@@ -158,6 +252,10 @@ export function WhatSection({ guideHref }: WhatSectionProps) {
         <p className="m-0 mt-2 max-w-[44rem] font-body text-[clamp(13px,1.1vw,15px)] leading-[1.6] text-[var(--carrom-muted)]">
           {WHAT_CONTENT.body}
         </p>
+
+        <div className="w-full max-w-[44rem]">
+          <StatsStrip />
+        </div>
 
         <WhatVideo />
 
