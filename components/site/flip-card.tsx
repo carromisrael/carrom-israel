@@ -17,7 +17,6 @@ export type FlipCardProps = {
   priceLabel: string;
   image: string;
   imageAlt: string;
-  imageRotate?: boolean;
   blurb: string;
   specs: FlipCardSpec[];
   href: string;
@@ -31,7 +30,6 @@ export function FlipCard({
   priceLabel,
   image,
   imageAlt,
-  imageRotate,
   blurb,
   specs,
   href,
@@ -60,47 +58,39 @@ export function FlipCard({
       data-flipped={flipped ? "true" : undefined}
     >
       {featured && (
-        <span className="pointer-events-none absolute -top-3 start-1/2 z-10 -translate-x-1/2 rounded-full bg-brand-gold px-4 py-1.5 font-ui text-xs font-bold tracking-[0.04em] text-ink-900 shadow-card">
+        <span className="pointer-events-none absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-brand-gold px-4 py-1.5 font-ui text-xs font-bold tracking-[0.04em] text-ink-900 shadow-card">
           הכי נמכר
         </span>
       )}
       <div
         className={cn(
           "flip-inner rounded-2xl",
-          featured && "ring-2 ring-brand-gold/70 ring-offset-2 ring-offset-maple-400",
+          featured && "ring-2 ring-brand-gold/70 ring-offset-2 ring-offset-ink-800",
         )}
       >
         <button
           type="button"
-          className="flip-face wood-grain flex cursor-pointer flex-col overflow-hidden rounded-2xl border-[3px] border-wood-800 p-0 text-start shadow-card"
+          className="group flip-face wood-grain flex cursor-pointer flex-col overflow-hidden rounded-2xl border-[3px] border-wood-800 p-0 text-start shadow-card"
           aria-expanded={flipped}
           aria-label={`${name}: ${flipped ? "הסתר פרטים" : "הצג פרטים"}`}
           onPointerDown={handlePointerDown}
           onClick={handleFrontClick}
         >
-          <div className="h-[340px] w-full shrink-0 p-4 pb-3">
-            <div className="relative h-full w-full overflow-hidden rounded-xl shadow-[inset_0_0_0_1px_rgba(0,0,0,0.15)]">
-              <div className={cn("absolute inset-0", imageRotate && "rotate-180")}>
-                <Image
-                  src={image}
-                  alt={imageAlt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover object-center"
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-wood-800/90 to-transparent"
-                />
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/20 to-transparent"
-                />
-              </div>
+          <div className="w-full shrink-0 p-3">
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-ink-900 ring-1 ring-black/30">
+              {/* Source photos are portrait (569×759) with the board sitting slightly above centre. */}
+              <Image
+                src={image}
+                alt={imageAlt}
+                fill
+                unoptimized
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 420px, 100vw"
+                className="object-cover object-[center_35%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              />
             </div>
           </div>
-          <div className="flex flex-col gap-2 px-6 py-[22px]">
-            <span className="font-ui text-xs font-semibold tracking-[0.18em] text-sand-50/60 uppercase">
+          <div className="flex flex-1 flex-col gap-2 px-6 pt-3 pb-6">
+            <span className="font-ui text-[13px] font-semibold tracking-[0.04em] text-sand-50/65">
               {kicker}
             </span>
             <div className="flex items-baseline justify-between gap-3">
@@ -114,7 +104,7 @@ export function FlipCard({
                 {priceLabel}
               </span>
             </div>
-            <span className="font-ui text-[13px] text-sand-50/55">
+            <span className="mt-auto pt-1 font-ui text-[13px] text-sand-50/55">
               <span className="md:hidden">לחצו לפרטים</span>
               <span className="hidden md:inline">עברו עם העכבר לפרטים</span>
             </span>
@@ -130,7 +120,7 @@ export function FlipCard({
           onClick={handleFrontClick}
         >
           <div className="flex flex-col gap-1.5">
-            <span className="font-ui text-xs font-semibold tracking-[0.18em] text-sand-50/60 uppercase">
+            <span className="font-ui text-[13px] font-semibold tracking-[0.04em] text-sand-50/65">
               {kicker}
             </span>
             <span className="font-display text-[34px] text-sand-50">{name}</span>

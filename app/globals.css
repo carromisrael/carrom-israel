@@ -289,18 +289,18 @@
 /* Product flip cards — 3D on hover/tap, stacked when reduced-motion */
 .flip-card {
   perspective: 1400px;
-  height: 560px;
 }
+/* Both faces share one grid cell, so the card is as tall as its taller face. */
 .flip-inner {
   position: relative;
+  display: grid;
   width: 100%;
-  height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .flip-face {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  grid-area: 1 / 1;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }

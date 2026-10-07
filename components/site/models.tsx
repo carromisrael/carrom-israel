@@ -6,26 +6,28 @@ export function ModelsSection() {
   return (
     <section
       id="models"
-      className="scroll-mt-[var(--nav-h)] bg-maple-400 px-[var(--gutter)] py-[var(--section-y)]"
+      className="scroll-mt-[var(--nav-h)] bg-ink-800 px-[var(--gutter)] py-[var(--section-y)]"
     >
       <div className="mx-auto max-w-[var(--container-max)]">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <span className="h-px w-12 bg-brand-gold" aria-hidden />
-          <h2 className="m-0 font-ui text-[clamp(40px,4.6vw,72px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-display">
+          <h2 className="m-0 font-ui text-[clamp(36px,4.6vw,64px)] font-extrabold leading-[1.1] tracking-[-0.02em] text-sand-50">
             בחרו את הדגם שלכם
           </h2>
+          <p className="m-0 max-w-[36rem] font-body text-[clamp(16px,1.4vw,18px)] leading-[1.6] text-sand-50/70">
+            שלושה לוחות, אותו משטח מייפל. ההבדל הוא בעובי, במשקל ובמסגרת.
+          </p>
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 gap-[var(--grid-gap)] md:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-[420px] grid-cols-1 gap-10 lg:mt-16 lg:gap-[var(--grid-gap)] lg:max-w-none lg:grid-cols-3 lg:items-start">
           {products.map((product, index) => (
-            <div key={product.id} className={index === 1 ? "md:-translate-y-6" : undefined}>
+            <div key={product.id} className={index === 1 ? "lg:-translate-y-6" : undefined}>
               <Reveal delay={index * 0.1}>
                 <FlipCard
                   name={product.name}
                   kicker={product.kicker}
                   priceLabel={formatPrice(product.price)}
                   image={product.image}
-                  imageAlt={product.name}
-                  imageRotate={product.imageRotate}
+                  imageAlt={`לוח קארום ${product.name}`}
                   blurb={product.blurb}
                   specs={[
                     { label: "עובי הלוח", value: product.thickness },
