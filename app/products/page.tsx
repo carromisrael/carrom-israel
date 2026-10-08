@@ -8,6 +8,7 @@ import { Reveal } from "@/components/site/reveal";
 import { ProductTeaserCard } from "@/components/site/product-teaser-card";
 import { ProductDetail } from "@/components/site/product-detail";
 import { SpecTable } from "@/components/site/spec-table";
+import { AccessoriesSection } from "@/components/site/accessories-section";
 import { Button } from "@/components/ui/button";
 import { boxContents, products, shippingInfo } from "@/lib/data";
 
@@ -52,6 +53,8 @@ export default function ProductsPage() {
       <ProductDetail product={champion} imageSide="start" />
       <ProductDetail product={pro} imageSide="end" tone="band" />
       <ProductDetail product={classic} imageSide="start" />
+
+      <AccessoriesSection />
 
       <section className="bg-ink-900 px-[var(--gutter)] py-[clamp(56px,7vw,104px)] text-sand-50">
         <div className="mx-auto grid max-w-[var(--container-max)] grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-[clamp(32px,5vw,72px)]">

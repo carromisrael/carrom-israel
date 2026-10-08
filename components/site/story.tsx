@@ -1,6 +1,7 @@
-import { FeatureTile } from "@/components/site/feature-tile";
+import Image from "next/image";
+import Link from "next/link";
+
 import { Reveal } from "@/components/site/reveal";
-import { featureTiles, storyBlocks } from "@/lib/data";
 
 export function StorySection() {
   return (
@@ -8,44 +9,41 @@ export function StorySection() {
       id="story"
       className="scroll-mt-[var(--nav-h)] bg-maple-200 px-[var(--gutter)] py-[var(--section-y)]"
     >
-      <div className="mx-auto flex max-w-[var(--container-max)] flex-col gap-[clamp(48px,6vw,80px)]">
-        <Reveal className="flex flex-col items-center gap-4 text-center">
-          <h2 className="m-0 max-w-[24ch] font-display text-[clamp(32px,3.6vw,56px)] font-normal leading-[1.12] tracking-[-0.015em] text-ink-900">
-            שלושה מילואימניקים ושיחה על שולחן
+      <div className="mx-auto grid max-w-[var(--container-max)] grid-cols-1 items-center gap-[clamp(32px,5vw,72px)] md:grid-cols-2">
+        <Reveal className="flex flex-col gap-6">
+          <h2 className="m-0 max-w-[22ch] font-display text-[clamp(28px,3.4vw,52px)] leading-[1.12] tracking-[-0.015em] text-ink-900">
+            איך משחק ברחוב במומבאי הפך לייבוא של לוחות לישראל
           </h2>
+          <p className="m-0 max-w-[48ch] font-body text-[18px] leading-[1.68] font-light text-pretty text-ink-700">
+            אני אליה, ואני נוסע להודו כבר ארבע שנים. שם, ברחוב במומבאי, שיחקתי
+            קארום בפעם הראשונה — הייתי גרוע, והם פרגנו לי על כל מכה. חזרתי
+            הביתה עם לוח על ריקשה, וזיו החליט שהרעיון לא נשאר רעיון. היום
+            אנחנו מביאים את המשחק הזה לישראל, מהיצרנים הטובים בעולם.
+          </p>
+          <div>
+            <Link
+              href="/our-story"
+              className="carrom-focus inline-flex min-h-11 items-center font-ui text-[15px] font-semibold text-ink-900 underline-offset-4 hover:underline"
+            >
+              קראו את הסיפור המלא ←
+            </Link>
+          </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-x-[clamp(24px,3vw,44px)] gap-y-8 md:grid-cols-3">
-          {storyBlocks.map((block, index) => (
-            <Reveal
-              key={block.num}
-              delay={index * 0.1}
-              className="flex flex-col gap-5 border-t border-ink-900/12 pt-5"
-            >
-              <span
-                dir="ltr"
-                className="inline-flex w-fit items-center self-end rounded-full border border-ink-900/12 bg-white/70 px-2.5 py-1 font-ui text-[11px] font-semibold tracking-[0.14em] text-wood-600"
-              >
-                {block.num}
-              </span>
-              <p className="m-0 font-body text-[17px] leading-[1.68] text-ink-700">
-                {block.text}
-              </p>
-            </Reveal>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 gap-[clamp(16px,2vw,24px)] md:grid-cols-3">
-          {featureTiles.map((tile, index) => (
-            <Reveal key={tile.kicker} delay={index * 0.1}>
-              <FeatureTile
-                image={tile.image}
-                kicker={tile.kicker}
-                caption={tile.caption}
+        {/* Placeholder photo: replace with a real photo of Eliya and Ziv. */}
+        <Reveal delay={0.1}>
+          <figure className="m-0 mx-auto flex w-full max-w-[460px] flex-col gap-3">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border-hairline shadow-card">
+              <Image
+                src="/assets/story-handshake.jpg"
+                alt="אליה וזיו"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
               />
-            </Reveal>
-          ))}
-        </div>
+            </div>
+          </figure>
+        </Reveal>
       </div>
     </section>
   );

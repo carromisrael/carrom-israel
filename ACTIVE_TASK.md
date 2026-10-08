@@ -10,7 +10,7 @@
 **Phase 1b — Home page redesign, section by section.** The original Phase 1 build is done; we are now reworking each home section, partly by porting sections from the friend's Claude Design handoff.
 
 ## Doing next
-Task 1 is done. **Task 2 (Our Story page + home teaser) is next, in a new chat.** Task 3 (cleanup) after that.
+Task 1 is done. **Task 2 is done (2026-10-08)** — `/our-story` built and the home `#story` now shows a short summary + link. Task 3 (cleanup) is next.
 
 Rule for tasks 1 and 2: take the friend's **layout, flow, content and assets**, but build it with **our design system** (tokens in `app/globals.css`, `components/ui/*`, existing `components/site/*` patterns, fonts, RTL rules). Do not copy his inline styles or his `_ds` tokens.
 
@@ -27,7 +27,7 @@ Rule for tasks 1 and 2: take the friend's **layout, flow, content and assets**, 
 - Source: `carrom-cursor-kit 2/Carrom Israel Landing Page 2/Our Story.dc.html`. Story of Eliya travelling to India → carried a board home → met the makers → "שהמשחק הזה יחבר גם כאן" → CTA "אותו לוח, עכשיו על השולחן שלכם".
 - Assets: `story-kids-night.jpg`, `story-kids-street.jpg`, `story-rickshaw.jpg`, `story-handshake.jpg`, `story-factory.jpg`, `story-kids-ball.jpg`, `story-street-clip.mp4` (in his `assets/`, not yet in `public/assets/`).
 - Step 2: replace the current home `#story` (`components/site/story.tsx`, the old "שלושה מילואימניקים" copy) with a short excerpt of the new story + link to `/our-story`. Note: his home page has no story section; this excerpt is our addition. The two founding stories differ (three reservists vs. Eliya) — confirm which is true before publishing.
-- Status: **not started**.
+- Status: **done** (2026-10-08) — `app/our-story/page.tsx` (hero quote, Eliya's trip, rickshaw, Ziv, makers, closing, CTA). Images copied to `public/assets/story-*.jpg`. Home `components/site/story.tsx` now has a one-paragraph summary, a link to `/our-story`, and a **placeholder photo** (`story-handshake.jpg`) to replace with a real photo of Eliya and Ziv. The old `storyBlocks` / `featureTiles` data and `feature-tile.tsx` are no longer used by the home page (remove in task 3).
 
 ### Task 3 — Project cleanup (after tasks 1 and 2)
 - **One design doc.** Merge into a single `design.md` at the repo root: the live rules from `carrom-cursor-kit 2/design.md` + the design system actually in `app/globals.css` + decisions from this phase. Then remove the duplicates/outdated docs, e.g. `carrom-cursor-kit 2/{README,CURSOR_PROMPT,IMPLEMENTATION_CHECKLIST,VALIDATION,ASSETS}.md`, the `_ds/.../readme.md`, and check whether `PRODUCT.md` and `skills/frontend-design/` (duplicate of `.cursor/skills/frontend-design`) are still needed.

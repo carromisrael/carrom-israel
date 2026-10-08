@@ -130,14 +130,14 @@ Every board ships with: 19 coins (9+9+queen), 2 strikers, powder, Hebrew instruc
 - [x] **Phase 1 — Home page UI**: build all 8 sections above as static components, no interactivity beyond hover/flip/marquee.
 - [ ] **Phase 1b — Home redesign** (current): rework sections one at a time (hero, `#what`, trust done; models in progress; story, events, footer next). Status table in `ACTIVE_TASK.md`.
 - [x] **Phase 2 — Products page UI**: `/products` built from `Products.dc.html` with our design system — product grid + per-model detail + shipping info. Done 2026-10-08, see `ACTIVE_TASK.md` Task 1.
-- [ ] **Phase 2b — Our Story page** (next, task 2): build `/our-story` from `Our Story.dc.html`, then replace home `#story` with a short excerpt linking to it.
+- [x] **Phase 2b — Our Story page** (task 2): `/our-story` built from `Our Story.dc.html`; home `#story` now has a short excerpt linking to it. Done 2026-10-08.
 - [ ] **Phase 2c — Cleanup** (task 3, after 2 + 2b): one `design.md`, remove `carrom-cursor-kit 2/` once ported, drop unused variants/toggles/assets/docs. Details in `ACTIVE_TASK.md`.
 - [ ] **Phase 3 — How-to-play page**: build from `How To Play.dc.html`.
 - [ ] **Phase 4 — Purchase flow**: cart state, checkout page, pick + integrate a payment provider (Stripe / Cardcom / Tranzila / PayPlus).
 - [ ] **Phase 5 — Supabase**: orders table, maybe events RSVP + contact form storage.
 - [ ] **Phase 6 — Deploy**: connect repo to Vercel, env vars, custom domain.
 
-**Currently: Phase 2 done; Phase 2b (Our Story page, new chat) is next, then 2c cleanup. UI only.**
+**Currently: Phases 2 and 2b done; Phase 2c (cleanup) is next. UI only.**
 
 ---
 
