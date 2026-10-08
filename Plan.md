@@ -10,7 +10,7 @@
 - **Product**: Carrom boards (3 models: Classic / Pro / Champion), imported from India, sold to Israeli customers.
 - **Site type**: Hebrew-only (RTL), single-brand e-commerce-style landing site.
 - **Current goal (this phase)**: Build the **UI only** — no backend, no payments, no DB. Static/local data.
-- **Design source**: Claude Design handoff bundle at `~/Downloads/carrom-israel-landing-page/` (HTML/CSS prototypes — not production code, ours to rebuild in React).
+- **Design source**: the friend's Claude Design at `carrom-cursor-kit 2/Carrom Israel Landing Page 2/` (HTML/CSS prototypes — not production code, ours to rebuild in React). Visual rules in `carrom-cursor-kit 2/design.md`. The older handoff at `~/Downloads/carrom-israel-landing-page/` is superseded.
 
 ---
 
@@ -89,7 +89,13 @@ Entire site is `dir="rtl"`. Set on `<html>` in root layout. Use Tailwind logical
 5. "What's in the box" + "Shipping & warranty" spec tables (dark section)
 6. Footer
 
-### `/how-to-play` — **not yet designed** in the handoff (linked as `How To Play.dc.html` but file doesn't exist). We'll stub this as a simple placeholder page for now and flesh it out once you have that design, or write it ourselves — **needs your decision, see open questions**.
+### `/how-to-play` — designed in the friend's handoff (`How To Play.dc.html`). Not built yet.
+
+### Other pages in the friend's handoff
+- `Our Story.dc.html`, `Accessories.dc.html` — not built yet (Our Story is task 2, next)
+- Per-model pages: `Model Classic.dc.html`, `Model Pro.dc.html`, `Model Champion.dc.html` — superseded; built as anchor sections within `/products` instead of separate pages (see `app/products/page.tsx`)
+
+### `/online` — online carrom vs. computer (trial). Built outside the original plan; lives in `app/online/` + `components/game/`.
 
 ### Product data (hardcoded for now, no DB)
 | Model | Thickness | Frame | Price | Weight | Size |
@@ -120,21 +126,24 @@ Every board ships with: 19 coins (9+9+queen), 2 strikers, powder, Hebrew instruc
 
 ## 6. Phased Roadmap
 
-- [ ] **Phase 0 — Scaffold**: `create-next-app` (TS, App Router, Tailwind), install & init shadcn/ui, configure fonts + color/spacing theme tokens, copy handoff assets into `/public`.
-- [ ] **Phase 1 — Home page UI**: build all 8 sections above as static components, no interactivity beyond hover/flip/marquee.
-- [ ] **Phase 2 — Products page UI**: product grid + 3 detail sections + shipping info.
-- [ ] **Phase 3 — How-to-play page**: placeholder or real design (pending your input).
+- [x] **Phase 0 — Scaffold**: `create-next-app` (TS, App Router, Tailwind), install & init shadcn/ui, configure fonts + color/spacing theme tokens, copy handoff assets into `/public`.
+- [x] **Phase 1 — Home page UI**: build all 8 sections above as static components, no interactivity beyond hover/flip/marquee.
+- [ ] **Phase 1b — Home redesign** (current): rework sections one at a time (hero, `#what`, trust done; models in progress; story, events, footer next). Status table in `ACTIVE_TASK.md`.
+- [x] **Phase 2 — Products page UI**: `/products` built from `Products.dc.html` with our design system — product grid + per-model detail + shipping info. Done 2026-10-08, see `ACTIVE_TASK.md` Task 1.
+- [ ] **Phase 2b — Our Story page** (next, task 2): build `/our-story` from `Our Story.dc.html`, then replace home `#story` with a short excerpt linking to it.
+- [ ] **Phase 2c — Cleanup** (task 3, after 2 + 2b): one `design.md`, remove `carrom-cursor-kit 2/` once ported, drop unused variants/toggles/assets/docs. Details in `ACTIVE_TASK.md`.
+- [ ] **Phase 3 — How-to-play page**: build from `How To Play.dc.html`.
 - [ ] **Phase 4 — Purchase flow**: cart state, checkout page, pick + integrate a payment provider (Stripe / Cardcom / Tranzila / PayPlus).
 - [ ] **Phase 5 — Supabase**: orders table, maybe events RSVP + contact form storage.
 - [ ] **Phase 6 — Deploy**: connect repo to Vercel, env vars, custom domain.
 
-**We are starting Phase 0 → Phase 1 → Phase 2 now (UI only), per your request.**
+**Currently: Phase 2 done; Phase 2b (Our Story page, new chat) is next, then 2c cleanup. UI only.**
 
 ---
 
 ## 7. Open Questions / Decisions Needed
 
-1. `/how-to-play` page has no design yet — stub it with placeholder content, or do you have rules/content to give me now?
+1. ~~`/how-to-play` has no design~~ — resolved: the friend's handoff has `How To Play.dc.html`.
 2. Real phone number for WhatsApp link (currently placeholder `972000000000` in the handoff)?
 3. Payment provider for Phase 4 (Stripe now supports Israel, or a local one like Cardcom/Tranzila/PayPlus)?
 4. Real Instagram URL for footer (currently a placeholder link)?

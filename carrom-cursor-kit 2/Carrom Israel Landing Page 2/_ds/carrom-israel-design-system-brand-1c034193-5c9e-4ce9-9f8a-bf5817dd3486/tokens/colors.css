@@ -1,0 +1,53 @@
+:root{
+  /* — Brand core (sampled from the Carrom Israel logo) — */
+  --navy-900:#001B3F; --navy-800:#002050; --navy-700:#0B2C5E; --navy-600:#104080; --navy-500:#1B4E93;
+  --blue-500:#3E90BF; --blue-400:#5AA3CC; --blue-300:#8DC1DC; --blue-200:#C2DDEB; --blue-100:#E3EFF6;
+  --clay-600:#C63C1E; --clay-500:#E0472A; --clay-400:#EB6C50;
+
+  /* — Board & wood (product photography) — */
+  --maple-100:#FBF3E4; --maple-200:#F4E4C4; --maple-300:#EBD3A8; --maple-400:#DCBB86;
+  --wood-500:#A07040; --wood-600:#8A6238; --wood-700:#6B4A2A; --wood-800:#4A331D;
+
+  /* — Editorial neutrals (inspiration boards) — */
+  --ink-900:#100E0C; --ink-800:#1C1815; --ink-700:#2A241F; --ink-600:#413931;
+  --stone-500:#7C736A; --stone-400:#A29A90; --taupe-300:#B4AEA0; --taupe-200:#CFC8BA;
+  --sand-100:#EDE6D8; --sand-50:#F7F2E8; --white:#FFFFFF;
+
+  --green-600:#2C6B4F; --amber-500:#D79A3C; --red-600:#B3341C;
+
+  /* — Semantic aliases — */
+  --bg-page:var(--sand-50);
+  --bg-page-dark:var(--ink-900);
+  --bg-band:var(--taupe-300);
+  --surface-card:var(--white);
+  --surface-card-dark:var(--ink-800);
+  --surface-sunken:var(--sand-100);
+  --surface-wood:var(--wood-700);
+  --surface-board:var(--maple-200);
+
+  --text-display:var(--navy-800);
+  --text-display-invert:var(--sand-50);
+  --text-body:var(--ink-700);
+  --text-body-invert:#E8E1D5;
+  --text-muted:var(--stone-500);
+  --text-on-brand:var(--white);
+  --text-link:var(--navy-600);
+  --text-link-hover:var(--blue-500);
+
+  --brand-primary:var(--blue-500);
+  --brand-primary-hover:#347FAB;
+  --brand-primary-press:#2B6C92;
+  --brand-deep:var(--navy-800);
+  --brand-deep-hover:#00285F;
+  --brand-accent:var(--clay-500);
+  --brand-gold:var(--amber-500);
+
+  --border-hairline:rgba(16,14,12,.12);
+  --border-strong:rgba(16,14,12,.24);
+  --border-invert:rgba(247,242,232,.18);
+  --focus-ring:var(--blue-500);
+
+  --overlay-scrim:linear-gradient(180deg,rgba(16,14,12,.72) 0%,rgba(16,14,12,.32) 38%,rgba(16,14,12,.86) 100%);/* @kind other */
+  --overlay-protect-bottom:linear-gradient(180deg,rgba(16,14,12,0) 0%,rgba(16,14,12,.78) 100%);/* @kind other */
+  --gradient-wood:linear-gradient(180deg,#A9793F 0%,#8A6238 100%);/* @kind other */
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/colors.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/typography.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/radius.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/motion.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/base.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/styles.css">
+<script src="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@300;400;500;600;700&display=swap">
+<style>
+  body { margin:0; }
+  #dc-root [dir="rtl"] { --font-display: 'Suez One', serif; --font-body: 'Heebo', sans-serif; --font-ui: 'Heebo', sans-serif; }
+  a { color: var(--blue-500); text-decoration: none; }
+  a:hover { color: var(--navy-800); }
+  .site-nav-desktop { display: flex; }
+  .site-burger { display: none; }
+  .site-drawer { display: none; }
+  @media (max-width: 900px) {
+    .site-nav-desktop { display: none !important; }
+    .site-burger { display: flex !important; }
+    .site-drawer.is-open { display: flex !important; }
+  }
+</style>
+<script>
+(function () {
+  function bind() {
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-burger]");
+      var d = document.querySelector(".site-drawer");
+      if (!d) return;
+      if (b) { d.classList.toggle("is-open"); return; }
+      if (d.classList.contains("is-open") && !e.target.closest(".site-drawer")) d.classList.remove("is-open");
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind); else bind();
+})();
+</script>
+</helmet>
+<div dir="rtl" style="background:var(--bg-page);font-family:var(--font-body);color:var(--text-body)">
+
+<header style="position:sticky;top:0;z-index:40;height:78px;display:flex;align-items:center;gap:clamp(16px,3vw,40px);padding:0 clamp(20px,5vw,64px);background:rgba(0,32,80,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,242,232,.18)">
+  <div style="flex:1;display:flex;align-items:center">
+    <button type="button" data-burger="1" class="site-burger" aria-label="תפריט" style="align-items:center;justify-content:center;width:46px;height:46px;background:transparent;border:1px solid rgba(247,242,232,.35);border-radius:var(--r-pill);color:var(--sand-50);cursor:pointer;padding:0">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+    </button>
+  </div>
+  <nav class="site-nav-desktop" style="align-items:center;justify-content:center;gap:clamp(14px,2vw,26px);font-family:var(--font-ui);font-size:15px;font-weight:600">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">דף הבית</a>
+    <a href="Products.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">הדגמים</a>
+    <a href="Accessories.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">אביזרים</a>
+    <a href="How%20To%20Play.dc.html" style="color:#FFFFFF;padding-bottom:3px;border-bottom:1px solid var(--blue-500)">איך משחקים</a>
+    <a href="Our%20Story.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">הסיפור שלנו</a>
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html#contact" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">צרו קשר</a>
+  </nav>
+  <div style="flex:1;display:flex;justify-content:flex-end;margin-inline-end:calc(-1 * clamp(20px,5vw,64px) + 8px)">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="display:flex;align-items:center"><img src="assets/logo-wordmark.png" alt="Carrom Israel" style="height:54px"></a>
+  </div>
+  <div class="site-drawer" style="position:absolute;top:78px;right:0;left:0;flex-direction:column;padding:8px clamp(20px,5vw,64px) 22px;background:rgba(0,32,80,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,242,232,.18)">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">דף הבית</a>
+    <a href="Products.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">הדגמים</a>
+    <a href="Accessories.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">אביזרים</a>
+    <a href="How%20To%20Play.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:#FFFFFF;padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">איך משחקים</a>
+    <a href="Our%20Story.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">הסיפור שלנו</a>
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html#contact" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">צרו קשר</a>
+  </div>
+</header>
+
+<section style="position:relative;overflow:hidden;background:var(--ink-900);padding:clamp(64px,8vw,120px) clamp(20px,5vw,64px)">
+  <img src="assets/board-setup.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,12,.82) 0%,rgba(16,14,12,.58) 45%,rgba(16,14,12,.92) 100%)"></div>
+  <div style="position:relative;max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center">
+    <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe-300)">חוקי המשחק · ICF</span>
+    <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(38px,5.4vw,80px);line-height:1.04;letter-spacing:-.015em;color:#FFFDF8;margin:0;max-width:24ch">איך משחקים קארום</h1>
+    <p style="font-family:var(--font-body);font-size:clamp(18px,1.9vw,24px);font-weight:400;line-height:1.5;color:rgba(242,234,220,.86);max-width:52ch;margin:0">חמש דקות ללמוד, סבב של עשרים דקות, ומשם זה כבר עניין של אצבע. כל מה שצריך לדעת — מסדר הפתיחה ועד הניקוד הרשמי.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+      <a href="#quickstart" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="primary" size="lg" hint-size="200px,56px">בקצרה — חמישה שלבים</x-import></a>
+      <a href="#rules" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="invertOutline" size="lg" hint-size="160px,56px">החוקים המלאים</x-import></a>
+    </div>
+  </div>
+</section>
+
+<section id="quickstart" style="padding:clamp(64px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)">חמישה שלבים</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,3.2vw,48px);letter-spacing:-.015em;color:var(--text-display);margin:0">הסבב הראשון שלכם</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,2vw,28px)">
+      <sc-for list="{{ quickSteps }}" as="step" hint-placeholder-count="5">
+        <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);padding:28px;display:flex;flex-direction:column;gap:12px">
+          <span style="font-family:var(--font-display);font-size:34px;color:var(--blue-500);line-height:1">{{ step.num }}</span>
+          <h3 style="font-family:var(--font-body);font-size:19px;font-weight:600;color:var(--ink-900);margin:0">{{ step.title }}</h3>
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0">{{ step.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy-800);color:#E8E1D5;padding:clamp(64px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1fr minmax(300px,46%);gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe-300)">סדר הפתיחה</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,46px);letter-spacing:-.015em;color:#FFFDF8;margin:0">איך מסדרים את הדיסקיות</h2>
+      <p style="font-family:var(--font-body);font-size:17px;font-weight:300;line-height:1.62;color:rgba(242,234,220,.86);margin:0;max-width:48ch">המלכה האדומה במרכז המעגל. סביבה שש דיסקיות במעגל צמוד — לבן ושחור בסירוגין. סביבן עוד שתים־עשרה במעגל החיצוני, גם הן בסירוגין, כך שכל דיסקייה נוגעת בשכנותיה. לפני הפתיחה מיישרים בעדינות: הסידור צריך להיות הדוק, בלי רווחים.</p>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.SpecTable" rows="{{ setupSpecs }}" tone="invert" hint-size="100%,240px"></x-import>
+    </div>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+      <div style="border-radius:var(--r-md);overflow:hidden;border:1px solid rgba(247,242,232,.18)">
+        <img src="assets/board-setup.jpeg" alt="סידור הדיסקיות בפתיחה" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover">
+      </div>
+      <figcaption style="font-family:var(--font-ui);font-size:13px;color:rgba(242,234,220,.6)">הסידור המלא: מלכה, שש, ושתים־עשרה.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="rules" style="padding:clamp(64px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)">החוקים המלאים</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,3.2vw,48px);letter-spacing:-.015em;color:var(--text-display);margin:0">מהתור ועד הניקוד</h2>
+      <p style="font-family:var(--font-body);font-size:17px;font-weight:300;line-height:1.62;color:var(--ink-700);max-width:52ch;margin:0">מבוסס על החוקים של הפדרציה הבינלאומית (ICF) — אותם חוקים שלפיהם משחקים בטורנירים, בגרסה קצרה ובעברית.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(16px,2vw,28px)">
+      <sc-for list="{{ ruleGroups }}" as="group" hint-placeholder-count="6">
+        <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);padding:32px;display:flex;flex-direction:column;gap:16px">
+          <h3 style="font-family:var(--font-display);font-size:24px;font-weight:400;color:var(--ink-900);margin:0">{{ group.title }}</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ group.items }}" as="item" hint-placeholder-count="4">
+              <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;padding-bottom:12px;border-bottom:1px solid rgba(16,14,12,.12)">{{ item }}</p>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--taupe-300);color:var(--ink-900);padding:clamp(64px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(28px,3.5vw,48px)">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(16,14,12,.6)">מהשולחן שלנו</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.015em;margin:0">חמש טעויות של מתחילים</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(16px,2vw,28px)">
+      <sc-for list="{{ mistakes }}" as="m" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid rgba(16,14,12,.28)">
+          <h3 style="font-family:var(--font-body);font-size:18px;font-weight:600;margin:0">{{ m.title }}</h3>
+          <p style="font-family:var(--font-body);font-size:15px;font-weight:300;line-height:1.6;color:rgba(16,14,12,.78);margin:0">{{ m.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(64px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)">
+    <div style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)">שאלות נפוצות</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,3.2vw,48px);letter-spacing:-.015em;color:var(--text-display);margin:0">לפני שמתחילים</h2>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ faq }}" as="q" hint-placeholder-count="6">
+        <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(16,14,12,.12)">
+          <h3 style="font-family:var(--font-body);font-size:18px;font-weight:600;color:var(--ink-900);margin:0">{{ q.q }}</h3>
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;max-width:64ch">{{ q.a }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--maple-400);padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+    <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,3vw,44px);letter-spacing:-.015em;color:var(--ink-900);margin:0;max-width:26ch">עכשיו רק צריך לוח</h2>
+    <p style="font-family:var(--font-body);font-size:17px;font-weight:300;line-height:1.62;color:var(--ink-700);max-width:46ch;margin:0">שלושה דגמים, מלאי בישראל, אחריות שנתיים ומשלוח 3 ימי עסקים.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+      <a href="Products.dc.html" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="deep" size="lg" hint-size="190px,56px">בחרו את הדגם שלכם</x-import></a>
+      <a href="Accessories.dc.html" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="outline" size="lg" hint-size="170px,56px">אביזרים וחלפים</x-import></a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink-900);color:#E8E1D5;padding:clamp(48px,6vw,80px) clamp(20px,5vw,64px) 32px;border-top:1px solid rgba(247,242,232,.18)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;gap:clamp(32px,5vw,64px);flex-wrap:wrap;justify-content:space-between">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:34ch">
+      <img src="assets/logo-wordmark.png" alt="Carrom Israel" style="height:32px">
+      <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:rgba(247,242,232,.72);margin:0">מייבאים קארום בורד מהודו, מתאימים אותו לבית הישראלי, ושולחים עד הדלת.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:var(--font-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">חנות</span>
+      <a href="Model%20Champion.dc.html" style="font-family:var(--font-body);font-size:16px;color:var(--sand-50)">Champion</a>
+      <a href="Model%20Pro.dc.html" style="font-family:var(--font-body);font-size:16px;color:var(--sand-50)">Pro</a>
+      <a href="Model%20Classic.dc.html" style="font-family:var(--font-body);font-size:16px;color:var(--sand-50)">Classic</a>
+      <a href="Accessories.dc.html" style="font-family:var(--font-body);font-size:16px;color:var(--sand-50)">אביזרים</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:var(--font-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">צרו קשר</span>
+      <a href="mailto:CarromIsrael@gmail.com" style="font-family:var(--font-body);font-size:16px;color:var(--sand-50);direction:ltr">CarromIsrael@gmail.com</a>
+      <a href="{{ waLink }}" style="font-family:var(--font-body);font-size:16px;color:var(--sand-50)">וואטסאפ</a>
+    </div>
+  </div>
+  <div style="max-width:1360px;margin:clamp(40px,5vw,64px) auto 0;padding-top:20px;border-top:1px solid rgba(247,242,232,.18);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--font-ui);font-size:13px;color:rgba(247,242,232,.55)">
+    <span>© 2026 Carrom Israel · כל הזכויות שמורות</span>
+    <span style="letter-spacing:.18em;text-transform:uppercase">From India with Love</span>
+  </div>
+</footer>
+
+<a href="{{ waLink }}" target="_blank" rel="noopener" style="position:fixed;bottom:22px;left:22px;z-index:60;display:flex;align-items:center;gap:10px;background:#0F7A46;color:#FFFFFF;font-family:var(--font-ui);font-size:15px;font-weight:600;padding:14px 22px;border-radius:var(--r-pill);box-shadow:0 10px 30px -12px rgba(16,14,12,.5)" style-hover="background:#0B6239;color:#FFFFFF">שאלה? וואטסאפ</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;972524845695&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;\u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const phone = this.props.whatsapp ?? "972524845695";
+    return {
+      waLink: "https://wa.me/" + phone + "?text=" + encodeURIComponent("היי, יש לי שאלה על חוקי המשחק"),
+      quickSteps: [
+        { num: "01", title: "מסדרים", body: "מלכה במרכז, שש דיסקיות סביבה, שתים־עשרה במעגל החיצוני — לבן ושחור בסירוגין, הדוק." },
+        { num: "02", title: "בוחרים צבע", body: "מטילים מטבע. מי שפותח מקבל לבן, והצבע נקבע לכל הסבב." },
+        { num: "03", title: "מכים", body: "מניחים את הסטרייקר על קו הבסיס שלכם ומכים באצבע — בלי לדחוף, בלי לחרוג מהקווים." },
+        { num: "04", title: "ממשיכים", body: "הכנסתם דיסקייה משלכם? התור נשאר אצלכם. פספסתם — התור עובר." },
+        { num: "05", title: "מכסים מלכה", body: "אחרי שהכנסתם את המלכה חייבים להכניס דיסקייה משלכם באותו תור, אחרת היא חוזרת למרכז." }
+      ],
+      setupSpecs: [
+        { label: "דיסקיות", value: "9 לבנות · 9 שחורות · מלכה אדומה" },
+        { label: "סטרייקר", value: "אחד לכל שחקן, כבד מדיסקייה" },
+        { label: "שחקנים", value: "2 (אחד מול אחד) או 4 (זוגות)" },
+        { label: "אבקה", value: "פיזור דק על כל המשטח" },
+        { label: "משך סבב", value: "כ־20 דקות" }
+      ],
+      ruleGroups: [
+        { title: "התור", items: [
+          "הסטרייקר מונח על קו הבסיס שלכם — נוגע בשני הקווים, או בתוך העיגול שבקצה.",
+          "מכים באצבע בלבד. דחיפה, גרירה או מכה בשתי אצבעות אינן חוקיות.",
+          "הכנסתם דיסקייה בצבע שלכם — אתם ממשיכים לתור נוסף.",
+          "לא הכנסתם דבר — התור עובר ליריב, והלוח נשאר כמו שהוא."
+        ]},
+        { title: "המלכה", items: [
+          "המלכה האדומה שווה 3 נקודות ואפשר להכניס אותה בכל שלב.",
+          "חייבים ״לכסות״ אותה: להכניס דיסקייה משלכם באותה מכה או במכה שאחריה.",
+          "לא כיסיתם — המלכה חוזרת למרכז הלוח וממשיכים.",
+          "מי שהכניס את הדיסקייה האחרונה שלו לפני שכיסה מלכה — מפסיד את הסבב."
+        ]},
+        { title: "עבירות", items: [
+          "הכנסתם את הסטרייקר לכיס — דיסקייה שלכם חוזרת למרכז והתור עובר.",
+          "הכנסתם דיסקייה של היריב — היא נחשבת לו, והתור עובר.",
+          "דיסקייה או סטרייקר עפו מהלוח — חוזרים למרכז, עבירה.",
+          "נגיעה ביד, בשרוול או בסטרייקר של היריב היא עבירה לכל דבר."
+        ]},
+        { title: "ניקוד", items: [
+          "מי שסיים ראשון את כל הדיסקיות שלו זוכה בסבב.",
+          "הזוכה מקבל נקודה על כל דיסקייה שנשארה ליריב על הלוח.",
+          "מי שכיסה את המלכה מוסיף 3 נקודות — רק אם הוא לא עבר את 21 נקודות.",
+          "המשחק נגמר ב־25 נקודות או ב־8 סבבים, לפי מה שקורה קודם."
+        ]},
+        { title: "זוגות", items: [
+          "ארבעה שחקנים, שני זוגות, כל זוג יושב בצדדים נגדיים.",
+          "סדר המכות הוא סביב הלוח — לא שני שותפים ברצף.",
+          "כל זוג משחק את אותו צבע ומחלק את הדיסקיות ביניהם.",
+          "שותף שנגע בלוח בזמן התור של האחר — עבירה על שניהם."
+        ]},
+        { title: "הלוח והאבקה", items: [
+          "מפזרים אבקת החלקה דקה לפני כל סבב, ומנגבים במטלית יבשה בסוף.",
+          "אין להשתמש בשעווה, בטלק בושם או בקמח — הם דוחקים את המשטח.",
+          "לא מניחים כלים או שתייה על הלוח, גם לא לרגע.",
+          "רשת שנקרעה מתחלפת — לא תופרים אותה בחזרה."
+        ]}
+      ],
+      mistakes: [
+        { title: "אבקה בכתמים", body: "אבקה שנשארת בערמות מאיטה את הדיסקיות. מפזרים דק ומנגבים עודפים." },
+        { title: "מכה חזקה מדי", body: "מהירות מפזרת את הלוח לטובת היריב. עדיף מכה מדויקת שמשאירה אשכול." },
+        { title: "מלכה מוקדם מדי", body: "הכנסת מלכה בלי דיסקייה זמינה לכיסוי מחזירה אותה למרכז ומבזבזת תור." },
+        { title: "סטרייקר לא על הקווים", body: "הסטרייקר חייב לגעת בשני קווי הבסיס. הנחה שגויה היא עבירה." },
+        { title: "שולחן לא יציב", body: "לוח שזז אחרי כל מכה הופך את המשחק להגרלה. שולחן איתן, לא כיסא." }
+      ],
+      faq: [
+        { q: "כמה מקום צריך?", a: "שולחן של 90 ס״מ לפחות בכל צד, וארבעה כיסאות סביבו. הלוח מונח על השולחן — לא צריך חדר משחקים." },
+        { q: "מאיזה גיל אפשר לשחק?", a: "מגיל שש בערך — ילד מכיר את הכללים אחרי סבב אחד. Classic הוא הדגם הקל להרים לבד." },
+        { q: "האם חייבים אבקה?", a: "כן. בלי אבקת החלקה הדיסקיות נעצרות באמצע הדרך. שקית 50 גרם מספיקה לעשרות סבבים." },
+        { q: "מה עושים כשהרשת נקרעת?", a: "מחליפים. סט רשתות חלופיות עולה מעט ומותקן בחמש דקות בלי כלים." },
+        { q: "אפשר לשחק שלושה?", a: "אפשר, אבל המשחק בנוי לשניים או לארבעה. בשלושה נהוג לשחק סבבי צבירת נקודות אישיים." },
+        { q: "כמה זמן לוקח סבב?", a: "בין חמש־עשרה לעשרים וחמש דקות. משחק מלא עד 25 נקודות הוא בערך שעה." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

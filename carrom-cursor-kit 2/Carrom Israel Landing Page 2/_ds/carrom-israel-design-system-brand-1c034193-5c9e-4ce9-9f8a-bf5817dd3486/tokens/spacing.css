@@ -1,0 +1,12 @@
+:root{
+  --sp-0:0;/* @kind spacing */ --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px;
+  --sp-7:32px; --sp-8:40px; --sp-9:48px; --sp-10:64px; --sp-11:80px; --sp-12:104px; --sp-13:136px;
+
+  --gutter:clamp(20px,5vw,64px);/* @kind spacing */
+  --container-max:1360px;/* @kind spacing */
+  --container-text:64ch;/* @kind other */
+  --section-y:clamp(64px,9vw,136px);/* @kind spacing */
+  --band-y:clamp(48px,6vw,96px);/* @kind spacing */
+  --nav-h:78px;/* @kind spacing */
+  --grid-gap:clamp(16px,2vw,28px);/* @kind spacing */
+}

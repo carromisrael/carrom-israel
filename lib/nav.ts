@@ -4,7 +4,7 @@ export type NavLink = {
 };
 
 export const NAV_LINKS: readonly NavLink[] = [
-  { href: "/#models", label: "הלוחות שלנו" },
+  { href: "/products", label: "הלוחות שלנו" },
   { href: "/#what", label: "מה זה קארום" },
   { href: "/#events", label: "אירועים" },
 ];

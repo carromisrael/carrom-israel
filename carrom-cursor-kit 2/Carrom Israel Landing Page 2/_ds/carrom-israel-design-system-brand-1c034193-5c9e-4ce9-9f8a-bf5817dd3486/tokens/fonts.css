@@ -1,0 +1,11 @@
+/* Webfonts. NOTE: no brand font binaries were supplied — these are Google Fonts
+   substitutions chosen for Hebrew + Latin coverage. See readme.md "Fonts". */
+@import url("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Assistant:wght@200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap");
+
+:root{
+  --font-display:"Frank Ruhl Libre","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-display-latin:"Cormorant Garamond","Frank Ruhl Libre",Georgia,serif;
+  --font-body:"Assistant","Frank Ruhl Libre",system-ui,sans-serif;
+  --font-ui:"Assistant",system-ui,sans-serif;
+  --font-mono:ui-monospace,"SFMono-Regular",Menlo,monospace;
+}

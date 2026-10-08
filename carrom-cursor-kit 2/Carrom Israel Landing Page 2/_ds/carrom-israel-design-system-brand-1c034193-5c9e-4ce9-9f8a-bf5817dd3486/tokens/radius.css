@@ -1,0 +1,7 @@
+:root{
+  --r-0:0;/* @kind radius */ --r-xs:4px; --r-sm:8px; --r-md:14px; --r-lg:20px; --r-xl:28px; --r-pill:999px;
+  --r-card:var(--r-lg);
+  --r-image:var(--r-md);
+  --r-control:var(--r-pill);
+  --r-input:var(--r-sm);
+}

@@ -21,7 +21,6 @@ export type FlipCardProps = {
   specs: FlipCardSpec[];
   href: string;
   backClassName: string;
-  featured?: boolean;
 };
 
 export function FlipCard({
@@ -34,7 +33,6 @@ export function FlipCard({
   specs,
   href,
   backClassName,
-  featured,
 }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
   const pointerType = useRef<"mouse" | "touch" | "pen" | "">("");
@@ -57,17 +55,7 @@ export function FlipCard({
       className="flip-card relative"
       data-flipped={flipped ? "true" : undefined}
     >
-      {featured && (
-        <span className="pointer-events-none absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-brand-gold px-4 py-1.5 font-ui text-xs font-bold tracking-[0.04em] text-ink-900 shadow-card">
-          הכי נמכר
-        </span>
-      )}
-      <div
-        className={cn(
-          "flip-inner rounded-2xl",
-          featured && "ring-2 ring-brand-gold/70 ring-offset-2 ring-offset-ink-800",
-        )}
-      >
+      <div className="flip-inner rounded-2xl">
         <button
           type="button"
           className="group flip-face wood-grain flex cursor-pointer flex-col overflow-hidden rounded-2xl border-[3px] border-wood-800 p-0 text-start shadow-card"

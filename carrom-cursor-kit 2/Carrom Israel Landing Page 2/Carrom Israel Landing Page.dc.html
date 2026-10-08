@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/colors.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/typography.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/radius.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/motion.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/base.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/styles.css">
+<script src="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&amp;family=Heebo:wght@300;400;500;600;700&amp;display=swap">
+<style>
+  body { margin:0; }
+  #dc-root [dir="rtl"] { --font-display: 'Suez One', serif; --font-body: 'Heebo', sans-serif; --font-ui: 'Heebo', sans-serif; }
+  a { color: var(--brand-primary); text-decoration: none; }
+  a:hover { color: var(--navy-800); }
+  .site-nav-desktop { display: flex; }
+  .site-burger { display: none; }
+  .site-drawer { display: none; }
+  @media (max-width: 900px) {
+    .site-nav-desktop { display: none !important; }
+    .site-burger { display: flex !important; }
+    .site-drawer.is-open { display: flex !important; }
+  }
+  .marquee-track.is-running { animation-play-state: running !important; }
+  @keyframes trustMarquee { from { transform: translateX(0); } to { transform: translateX(50%); } }
+  #trust .marquee-track { animation: trustMarquee 46s linear infinite; animation-play-state: paused; }
+  #trust .marquee-track:hover { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) { #trust .marquee-track { animation: none; } }
+  #top > img, #story figure img, #trust img { filter: var(--tw-photo, none); }
+  #story figure > div { overflow: hidden; }
+  #story figure img { transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  #story figure:hover img { transform: scale(1.07); }
+</style>
+<script>
+(function () {
+  function bind() {
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-burger]");
+      var d = document.querySelector(".site-drawer");
+      if (!d) return;
+      if (b) { d.classList.toggle("is-open"); return; }
+      if (d.classList.contains("is-open") && !e.target.closest(".site-drawer")) d.classList.remove("is-open");
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind); else bind();
+})();
+</script>
+</helmet>
+<div dir="rtl" style="background:var(--bg-page);font-family:var(--font-body);color:var(--text-body)">
+
+<header style="position:sticky;top:0;z-index:40;height:78px;display:flex;align-items:center;gap:clamp(16px,3vw,40px);padding:0 clamp(20px,5vw,64px);background:rgba(0,32,80,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,242,232,.18)">
+  <div style="flex:1;display:flex;align-items:center">
+    <button type="button" data-burger="1" class="site-burger" aria-label="תפריט" style="align-items:center;justify-content:center;width:46px;height:46px;background:transparent;border:1px solid rgba(247,242,232,.35);border-radius:var(--r-pill);color:var(--sand-50);cursor:pointer;padding:0">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+    </button>
+  </div>
+  <nav class="site-nav-desktop" style="align-items:center;justify-content:center;gap:clamp(14px,2vw,26px);font-family:var(--font-ui);font-size:15px;font-weight:600">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="color:#FFFFFF;padding-bottom:3px;border-bottom:1px solid var(--blue-500)">דף הבית</a>
+    <a href="Products.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">הדגמים</a>
+    <a href="Accessories.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">אביזרים</a>
+    <a href="How%20To%20Play.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">איך משחקים</a>
+    <a href="Our%20Story.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">הסיפור שלנו</a>
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html#contact" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">צרו קשר</a>
+  </nav>
+  <div style="flex:1;display:flex;justify-content:flex-end;margin-inline-end:calc(-1 * clamp(20px,5vw,64px) + 8px)">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="display:flex;align-items:center"><img src="assets/logo-wordmark.png" alt="Carrom Israel" style="height:54px"></a>
+  </div>
+  <div class="site-drawer" style="position:absolute;top:78px;right:0;left:0;flex-direction:column;padding:8px clamp(20px,5vw,64px) 22px;background:rgba(0,32,80,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,242,232,.18)">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:#FFFFFF;padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">דף הבית</a>
+    <a href="Products.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">הדגמים</a>
+    <a href="Accessories.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">אביזרים</a>
+    <a href="How%20To%20Play.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">איך משחקים</a>
+    <a href="Our%20Story.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">הסיפור שלנו</a>
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html#contact" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">צרו קשר</a>
+  </div>
+</header>
+
+<section id="top" style="position:relative;min-height:88vh;overflow:hidden;background:var(--ink-900);display:flex;align-items:flex-end">
+  <img src="assets/lifestyle-bar.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  <div style="position:absolute;inset:0;background:var(--overlay-scrim)"></div>
+  <div style="position:relative;width:100%;max-width:1360px;margin:0 auto;padding:48px clamp(20px,5vw,64px) 56px">
+    <div style="display:flex;align-items:center;justify-content:center;gap:clamp(16px,3vw,32px);flex-wrap:wrap;text-align:center;margin-bottom:clamp(180px,34vh,420px)">
+      
+      
+      
+    <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(44px,6.4vw,100px);line-height:1.04;letter-spacing:-.015em;color:#FFFDF8;max-width:20ch;margin:0;text-shadow:var(--tw-glow, 0 0 8px rgba(255,251,240,.5), 0 0 34px rgba(255,246,225,.34), 0 0 90px rgba(224,190,130,.22), 0 4px 26px rgba(16,14,12,.55))"><span style="display:block;direction:ltr">Carrom - Israel</span><span style="display:block;font-weight:500">הבית של הקארום בישראל</span></h1></div>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:24px;max-width:46ch">
+        <p style="font-family:var(--font-body);font-size:clamp(22px,2.4vw,32px);font-weight:600;line-height:1.35;color:#F2EADC;margin:0;text-shadow:0 2px 14px rgba(16,14,12,.75)">לוחות הקארום הטובים בעולם<br>עכשיו בישראל!</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="Products.dc.html" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="primary" size="lg" hint-size="160px,56px">בחרו את הדגם שלכם</x-import></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what" style="padding:var(--tw-rhythm,clamp(64px,9vw,136px)) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1fr minmax(320px,52%);gap:clamp(28px,4vw,56px);align-items:start">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <p style="font:var(--type-body);margin:0;font-weight:800;font-size:19px;color:var(--wood-800);font-family:var(--font-body)">קארום (Carrom) הוא אחד ממשחקי השולחן החברתיים העתיקים והאהובים בעולם, ששורשיו נעוצים בתת-היבשת ההודית.<br>המשחק מנוהל על גבי לוח עץ מלוטש במיוחד.<br>במרכזו ממוקמים הדיסקיות (Coins) ומלכת הקארום האדומה.</p>
+      <p style="font:var(--type-body);margin:0;font-weight:800;font-size:19px;color:var(--wood-800);font-family:var(--font-body)">השחקנים יושבים סביב הלוח ומשתמשים בסטרייקר (Striker) כדי להעיף את הדיסקיות אל תוך ארבעת החורים בפינות הלוח, תוך שימוש באצבעות היד בלבד ובזוויות פגיעה מדויקות.</p>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:20px;text-align:right;margin-top:8px">
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:clamp(8px,1.4vw,20px);align-items:start;margin-top:0;width:100%">
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center;min-width:0"><span style="font-family:var(--font-ui);font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--navy-800);direction:ltr">2/4</span><span style="font-family:var(--font-ui);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase;color:var(--text-muted)">שחקנים</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center;min-width:0"><span style="font-family:var(--font-ui);font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--navy-800);direction:ltr">9</span><span style="font-family:var(--font-ui);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase;color:var(--text-muted)">דיסקיות שחורות</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center;min-width:0"><span style="font-family:var(--font-ui);font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--navy-800);direction:ltr">9</span><span style="font-family:var(--font-ui);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase;color:var(--text-muted)">דיסקיות לבנות</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center;min-width:0"><span style="font-family:var(--font-ui);font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--clay-500);direction:ltr">1</span><span style="font-family:var(--font-ui);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase;color:var(--text-muted)">מלכת הקארום</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center;min-width:0"><span style="font-family:var(--font-ui);font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--navy-800);direction:ltr">1</span><span style="font-family:var(--font-ui);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase;color:var(--text-muted)">סטרייקר</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center;min-width:0"><span style="font-family:var(--font-ui);font-weight:700;font-size:clamp(20px,2.2vw,28px);color:var(--navy-800);direction:ltr">6+</span><span style="font-family:var(--font-ui);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;line-height:1.3;text-transform:uppercase;color:var(--text-muted)">גיל מומלץ</span></div>
+      </div>
+      <a href="How%20To%20Play.dc.html#rules" style="font-family:var(--font-ui);font-size:16px;font-weight:600;color:var(--brand-primary);border-bottom:1px solid currentColor;padding-bottom:2px;margin-top:20px">חוקי המשחק ←</a>
+  </div>
+    </div>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+      <div style="border-radius:50%;overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card);background:var(--ink-900);aspect-ratio:1/1;width:100%;max-width:440px;margin-inline:auto">
+        <video src="assets/carrom-clip.mp4#t=5" poster="assets/board-setup.jpeg" id="carrom-video" disablePictureInPicture="disablePictureInPicture" muted="muted" playsinline="playsinline" style="display:block;width:100%;height:100%;object-fit:cover;background:var(--ink-900);pointer-events:none"></video>
+      </div>
+      
+    </figure>
+  
+</div></section>
+
+
+
+<section id="models" style="padding: var(--tw-rhythm,clamp(64px,9vw,136px)) clamp(20px,5vw,64px); background-color: var(--maple-400)">
+  <div style="max-width:1360px;margin:0 auto">
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+      <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;justify-content:center">
+        
+        <h2 style="font-family:var(--font-ui);font-weight:800;font-size:clamp(40px,4.6vw,72px);line-height:1.1;letter-spacing:-.02em;color:var(--text-display);margin:0">בחרו את הדגם שלכם</h2>
+        
+      </div>
+      
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-top:48px">
+      <div data-flip="card" data-href="Model%20Classic.dc.html" style="perspective:1400px;height:560px;cursor:pointer">
+        <div data-flip-inner="1" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.2,1)">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);overflow:hidden;border:3px solid var(--wood-800);box-shadow:var(--shadow-card);background:var(--wood-800);background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 2px, rgba(0,0,0,0) 2px 7px, rgba(0,0,0,.06) 7px 9px, rgba(0,0,0,0) 9px 16px),linear-gradient(160deg, rgba(255,255,255,.07), rgba(0,0,0,.25));display:flex;flex-direction:column">
+            <img src="assets/board-classic.jpeg" alt="Classic" style="display:block;width:100%;height:340px;flex:none;object-fit:cover;object-position:center">
+            <div style="padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.6)">8MM · מסגרת כחולה</span>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <span style="font-family:var(--font-display);font-size:30px;color:var(--sand-50)">Classic</span>
+                <span style="font-family:var(--font-ui);font-weight:700;font-size:22px;color:var(--brand-gold);direction:ltr">₪590</span>
+              </div>
+              <span style="font-family:var(--font-ui);font-size:13px;color:rgba(247,242,232,.55)">עברו עם העכבר לפרטים</span>
+            </div>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card);background:#1B3A5C;color:#E8E1D5;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.6)">8MM · מסגרת כחולה</span>
+              <span style="font-family:var(--font-display);font-size:34px;color:var(--sand-50)">Classic</span>
+            </div>
+            <p style="font:var(--type-body);color:rgba(247,242,232,.82);margin:0">הדגם שמתחילים איתו: קל להזיז, קל לאחסן, ואותו משטח מייפל שמאפשר לשחק ברצינות מהסבב הראשון.</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto">
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">עובי הלוח</span><span style="color:var(--sand-50)">8 מ״מ</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">מסגרת</span><span style="color:var(--sand-50)">עץ צבוע כחול</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">משקל</span><span style="color:var(--sand-50)">כ־8 ק״ג</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">מידות</span><span style="color:var(--sand-50)">86 × 86 ס״מ</span></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+              <span style="font-family:var(--font-ui);font-weight:700;font-size:24px;color:var(--brand-gold);direction:ltr">₪590</span>
+              <a href="Model%20Classic.dc.html" style="font-family:var(--font-ui);font-size:15px;font-weight:600;color:var(--sand-50);border-bottom:1px solid currentColor;padding-bottom:2px">הוסיפו לסל ←</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-flip="card" data-href="Model%20Pro.dc.html" style="perspective:1400px;height:560px;cursor:pointer">
+        <div data-flip-inner="1" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.2,1)">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);overflow:hidden;border:3px solid var(--wood-800);box-shadow:var(--shadow-card);background:var(--wood-800);background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 2px, rgba(0,0,0,0) 2px 7px, rgba(0,0,0,.06) 7px 9px, rgba(0,0,0,0) 9px 16px),linear-gradient(160deg, rgba(255,255,255,.07), rgba(0,0,0,.25));display:flex;flex-direction:column">
+            <img src="assets/board-pro.jpeg" alt="Pro" style="display:block;width:100%;height:340px;flex:none;object-fit:cover;object-position:center">
+            <div style="padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.6)">12MM · מסגרת שחורה</span>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <span style="font-family:var(--font-display);font-size:30px;color:var(--sand-50)">Pro</span>
+                <span style="font-family:var(--font-ui);font-weight:700;font-size:22px;color:var(--brand-gold);direction:ltr">₪790</span>
+              </div>
+              <span style="font-family:var(--font-ui);font-size:13px;color:rgba(247,242,232,.55)">עברו עם העכבר לפרטים</span>
+            </div>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card);background:#14100E;color:#E8E1D5;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.6)">12MM · מסגרת שחורה</span>
+              <span style="font-family:var(--font-display);font-size:34px;color:var(--sand-50)">Pro</span>
+            </div>
+            <p style="font:var(--type-body);color:rgba(247,242,232,.82);margin:0">ההמלצה שלנו לרוב הבתים — כבד מספיק כדי לשחק רציני, קל מספיק כדי לצאת איתו לגינה ובחזרה.</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto">
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">עובי הלוח</span><span style="color:var(--sand-50)">12 מ״מ</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">מסגרת</span><span style="color:var(--sand-50)">עץ צבוע שחור</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">משקל</span><span style="color:var(--sand-50)">כ־11 ק״ג</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">מידות</span><span style="color:var(--sand-50)">88 × 88 ס״מ</span></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+              <span style="font-family:var(--font-ui);font-weight:700;font-size:24px;color:var(--brand-gold);direction:ltr">₪790</span>
+              <a href="Model%20Pro.dc.html" style="font-family:var(--font-ui);font-size:15px;font-weight:600;color:var(--sand-50);border-bottom:1px solid currentColor;padding-bottom:2px">הוסיפו לסל ←</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-flip="card" data-href="Model%20Champion.dc.html" style="perspective:1400px;height:560px;cursor:pointer">
+        <div data-flip-inner="1" style="position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.2,1)">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--r-lg);overflow:hidden;border:3px solid var(--wood-800);box-shadow:var(--shadow-card);background:var(--wood-800);background-image:repeating-linear-gradient(90deg, rgba(255,255,255,.045) 0 2px, rgba(0,0,0,0) 2px 7px, rgba(0,0,0,.06) 7px 9px, rgba(0,0,0,0) 9px 16px),linear-gradient(160deg, rgba(255,255,255,.07), rgba(0,0,0,.25));display:flex;flex-direction:column">
+            <img src="assets/board-champion-top.jpeg" alt="Champion" style="display:block;width:100%;height:340px;flex:none;object-fit:cover;object-position:center;transform:rotate(180deg)">
+            <div style="padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.6)">16MM · TOURNAMENT</span>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <span style="font-family:var(--font-display);font-size:30px;color:var(--sand-50)">Champion</span>
+                <span style="font-family:var(--font-ui);font-weight:700;font-size:22px;color:var(--brand-gold);direction:ltr">₪990</span>
+              </div>
+              <span style="font-family:var(--font-ui);font-size:13px;color:rgba(247,242,232,.55)">עברו עם העכבר לפרטים</span>
+            </div>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card);background:#3A2A18;color:#E8E1D5;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.6)">16MM · TOURNAMENT</span>
+              <span style="font-family:var(--font-display);font-size:34px;color:var(--sand-50)">Champion</span>
+            </div>
+            <p style="font:var(--type-body);color:rgba(247,242,232,.82);margin:0">עץ טיק מלא בגימור שמן, המשטח העבה והכבד בסדרה. הדיסקית עוצרת בדיוק במקום שהתכוונתם — לוח של טורנירים.</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto">
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">עובי הלוח</span><span style="color:var(--sand-50)">16 מ״מ</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">מסגרת</span><span style="color:var(--sand-50)">עץ טיק מלא</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">משקל</span><span style="color:var(--sand-50)">כ־14 ק״ג</span></div>
+              <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:8px;border-bottom:1px solid rgba(247,242,232,.2);font-family:var(--font-ui);font-size:14px"><span style="color:rgba(247,242,232,.6)">מידות</span><span style="color:var(--sand-50)">89 × 89 ס״מ</span></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+              <span style="font-family:var(--font-ui);font-weight:700;font-size:24px;color:var(--brand-gold);direction:ltr">₪990</span>
+              <a href="Model%20Champion.dc.html" style="font-family:var(--font-ui);font-size:15px;font-weight:600;color:var(--sand-50);border-bottom:1px solid currentColor;padding-bottom:2px">הוסיפו לסל ←</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events" style="background:var(--tw-band,var(--navy-800));color:var(--tw-band-text,#E8E1D5);padding:var(--tw-rhythm,clamp(64px,9vw,136px)) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">אירועים קרובים</span>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,3.2vw,48px);letter-spacing:-.015em;color:var(--sand-50);margin:0">בואו לשחק איתנו</h2>
+        <p style="font:var(--type-body);color:rgba(247,242,232,.72);max-width:none;white-space:nowrap;margin:0">אנחנו מביאים לוחות לערבי משחק, טורנירים פתוחים וימי משפחה. הכניסה חופשית, הלוחות עלינו.</p>
+      </div>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="gold" size="md" hint-size="170px,48px">הזמינו אירוע אצלכם</x-import>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:120px 1.4fr 1fr auto;gap:clamp(16px,3vw,40px);align-items:center;padding:26px 0;border-top:1px solid rgba(247,242,232,.18)">
+        <span style="font-family:var(--font-ui);font-weight:700;font-size:15px;color:var(--brand-gold);direction:ltr;text-align:right">12.09.26</span>
+        <span style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);color:var(--sand-50)">ערב קארום פתוח — נמל תל אביב</span>
+        <span style="font:var(--type-body);color:rgba(247,242,232,.72)">נמל תל אביב, 21:00 · ארבעה לוחות</span>
+        <a href="#contact" style="font-family:var(--font-ui);font-size:14px;font-weight:600;color:var(--sand-50);white-space:nowrap">הרשמה ←</a>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1.4fr 1fr auto;gap:clamp(16px,3vw,40px);align-items:center;padding:26px 0;border-top:1px solid rgba(247,242,232,.18)">
+        <span style="font-family:var(--font-ui);font-weight:700;font-size:15px;color:var(--brand-gold);direction:ltr;text-align:right">03.10.26</span>
+        <span style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);color:var(--sand-50)">טורניר המשפחות הראשון — ירושלים</span>
+        <span style="font:var(--type-body);color:rgba(247,242,232,.72)">מתנ״ס זיו הגבר, 17:00 · זוגות הורה־ילד · 16 זוגות</span>
+        <a href="#contact" style="font-family:var(--font-ui);font-size:14px;font-weight:600;color:var(--sand-50);white-space:nowrap">הרשמה ←</a>
+      </div>
+      <div style="display:grid;grid-template-columns:120px 1.4fr 1fr auto;gap:clamp(16px,3vw,40px);align-items:center;padding:26px 0;border-top:1px solid rgba(247,242,232,.18);border-bottom:1px solid rgba(247,242,232,.18)">
+        <span style="font-family:var(--font-ui);font-weight:700;font-size:15px;color:var(--brand-gold);direction:ltr;text-align:right">24.10.26</span>
+        <span style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);color:var(--sand-50)">קארום בשטח — פארק לאומי אשקלון</span>
+        <span style="font:var(--type-body);color:rgba(247,242,232,.72)">על הדשא, 10:00–16:00 · שולחנות מתקפלים · כל הגילים</span>
+        <a href="#contact" style="font-family:var(--font-ui);font-size:14px;font-weight:600;color:var(--sand-50);white-space:nowrap">הרשמה ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trust" style="padding:var(--tw-rhythm,clamp(64px,9vw,136px)) clamp(20px,5vw,64px)">
+  <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(30px,3.2vw,48px);letter-spacing:-.015em;color:var(--text-display);margin:0 0 clamp(24px,3vw,40px);text-align:center">מה אומרים עלינו</h2><div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+      <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;justify-content:center">
+        
+      </div>
+      
+    </div>
+    <div style="overflow:hidden;margin-inline:calc(-1 * clamp(20px,5vw,64px));padding-inline:clamp(20px,5vw,64px);-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)">
+      <div class="marquee-track" style="display:flex;gap:clamp(16px,2vw,28px);width:max-content;align-items:stretch">
+      <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-soldiers.png" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">הזמנתי לוח ליחידה. שלושה חודשים של מילואים, וזה הדבר היחיד שהוציא את כולם מהפלאפון.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">איתי ב׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">בסיס בדרום</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-school.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">הכנסנו שני לוחות לחדר החוגים. ההנהלה מדווחת על פחות ריבים בהפסקות ועל ילדים שמחכים לתור.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">מיטל ג׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">הנהלת בית ספר, נתניה</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-pub.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">רכשנו 4 שולחנות לפאב שלנו. הטראפיק וכמות האנשים שבאו בעקבותם כיסו את העלות הזניחה שלהם מהר מאוד. מוצר מושלם.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">רועי א׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">בעל פאב, פרדס חנה</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-family.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">קנינו שולחן הביתה — אחלה זמן איכות משפחתי. אוהבים לשבת בערב לשחק ולשתף חוויות.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">נועה ל׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">מודיעין</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-grandpa.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">שמח שקניתי. סוף סוף יש לי משחק שכל הנכדים אוהבים לבוא לשחק איתי בו.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">יעקב ש׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">ירושלים</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/lifestyle-beach.jpeg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">אין כמו קמפינג משפחתי עם קארום.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">שירן ק׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">רעננה</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-soldiers.png" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">הזמנתי לוח ליחידה. שלושה חודשים של מילואים, וזה הדבר היחיד שהוציא את כולם מהפלאפון.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">איתי ב׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">בסיס בדרום</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-school.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">הכנסנו שני לוחות לחדר החוגים. ההנהלה מדווחת על פחות ריבים בהפסקות ועל ילדים שמחכים לתור.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">מיטל ג׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">הנהלת בית ספר, נתניה</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-pub.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">רכשנו 4 שולחנות לפאב שלנו. הטראפיק וכמות האנשים שבאו בעקבותם כיסו את העלות הזניחה שלהם מהר מאוד. מוצר מושלם.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">רועי א׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">בעל פאב, פרדס חנה</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-family.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">קנינו שולחן הביתה — אחלה זמן איכות משפחתי. אוהבים לשבת בערב לשחק ולשתף חוויות.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">נועה ל׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">מודיעין</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/review-grandpa.jpg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">שמח שקניתי. סוף סוף יש לי משחק שכל הנכדים אוהבים לבוא לשחק איתי בו.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">יעקב ש׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">ירושלים</span>
+          </div>
+        </div>
+      </div>
+      <div aria-hidden="true" style="background:#FFFFFF;border:1px solid rgba(16,14,12,.12);border-radius:var(--r-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;flex:0 0 clamp(300px,26vw,380px)">
+        <img src="assets/lifestyle-beach.jpeg" alt="" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover">
+        <div style="padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px;flex:1">
+          <p style="font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.62;color:var(--ink-700);margin:0;flex:1;text-wrap:pretty">אין כמו קמפינג משפחתי עם קארום.</p>
+          <div style="display:flex;flex-direction:column;gap:2px;padding-top:12px;border-top:1px solid rgba(16,14,12,.12)">
+            <span style="font-family:var(--font-body);font-size:16px;font-weight:600;color:var(--ink-900)">שירן ק׳</span>
+            <span style="font-family:var(--font-ui);font-size:13px;color:var(--text-muted)">רעננה</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" style="background:var(--navy-800);color:#E8E1D5;padding:clamp(56px,7vw,96px) clamp(20px,5vw,64px) 32px;border-top:1px solid rgba(247,242,232,.18)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;gap:clamp(32px,5vw,64px);flex-wrap:wrap;justify-content:space-between">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:34ch">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:var(--font-ui);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.7)">חנות</span>
+      <a href="Model%20Champion.dc.html" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">Champion</a>
+      <a href="Model%20Pro.dc.html" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">Pro</a>
+      <a href="Model%20Classic.dc.html" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">Classic</a>
+      <a href="Accessories.dc.html" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">אביזרים וחלפים</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:var(--font-ui);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.7)">מידע</span>
+      <a href="How%20To%20Play.dc.html" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">איך משחקים</a>
+      <a href="How%20To%20Play.dc.html#rules" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">חוקי המשחק</a>
+      <a href="#events" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">אירועים</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:var(--font-ui);font-size:15px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.7)">צרו קשר</span>
+      <a href="mailto:CarromIsrael@gmail.com" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50);direction:ltr">CarromIsrael@gmail.com</a>
+      <a href="https://wa.me/972524845695" style="font-family:var(--font-body);font-size:19px;color:var(--sand-50)">וואטסאפ</a>
+      <div style="display:flex;gap:12px;margin-top:6px">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid rgba(247,242,232,.35);color:var(--sand-50)" style-hover="background:rgba(247,242,232,.14);color:#FFFFFF">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok" style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid rgba(247,242,232,.35);color:var(--sand-50)" style-hover="background:rgba(247,242,232,.14);color:#FFFFFF">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-2.9v11.4a2.59 2.59 0 1 1-1.84-2.48V9.03a5.4 5.4 0 1 0 4.74 5.35V8.9a7.2 7.2 0 0 0 3.96 1.19V7.2a4.25 4.25 0 0 1-2.9-1.38Z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1360px;margin:clamp(40px,5vw,64px) auto 0;padding-top:20px;border-top:1px solid rgba(247,242,232,.18);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--font-ui);font-size:15px;color:rgba(247,242,232,.62)">
+    <span>© 2026 Carrom Israel · כל הזכויות שמורות</span>
+    <span style="letter-spacing:.18em;text-transform:uppercase">From India with Love</span>
+  </div>
+</footer>
+
+
+</div>
+
+
+<a href="https://wa.me/972524845695" target="_blank" rel="noopener" aria-label="וואטסאפ" style="position:fixed;inset-inline-start:clamp(16px,2vw,28px);bottom:clamp(16px,2vw,28px);z-index:60;width:56px;height:56px;border-radius:999px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px -12px rgba(16,14,12,.45);transition:transform .22s cubic-bezier(.2,.6,.2,1),box-shadow .22s cubic-bezier(.2,.6,.2,1)" style-hover="transform:translateY(-4px);box-shadow:0 14px 36px -12px rgba(16,14,12,.55)" style-active="transform:scale(.975)">
+  <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.18-.3-.02-.47.13-.62.15-.15.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.62-.93-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46 0 1.45 1.06 2.85 1.21 3.05.15.2 2.09 3.2 5.06 4.48 2.98 1.28 3.32 1.15 3.92 1.09.6-.05 1.94-.79 2.21-1.55.27-.77.27-1.43.2-1.56-.08-.13-.28-.2-.58-.35z"></path><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.28-1.38a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.11.81.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.35c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.26.86 5.81 2.41a8.17 8.17 0 0 1 2.41 5.82c0 4.54-3.69 8.2-8.23 8.2z"></path></svg>
+</a></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroGlow&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;none&quot;,&quot;soft&quot;,&quot;radiant&quot;],&quot;default&quot;:&quot;radiant&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;sectionRhythm&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;compact&quot;,&quot;editorial&quot;,&quot;grand&quot;],&quot;default&quot;:&quot;editorial&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;bandMood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;navy&quot;,&quot;ink&quot;,&quot;taupe&quot;],&quot;default&quot;:&quot;navy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;},&quot;photoMood&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;natural&quot;,&quot;tungsten&quot;,&quot;deep&quot;],&quot;default&quot;:&quot;natural&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Feel&quot;}}">
+class Component extends DCLogic {
+  applyTweaks() {
+    const p = this.props || {};
+    const root = document.querySelector('#dc-root [dir="rtl"]');
+    if (!root) return;
+    const glow = {
+      none: "0 4px 26px rgba(16,14,12,.55)",
+      soft: "0 0 18px rgba(255,251,240,.28), 0 4px 26px rgba(16,14,12,.6)",
+      radiant: "0 0 8px rgba(255,251,240,.5), 0 0 34px rgba(255,246,225,.34), 0 0 90px rgba(224,190,130,.22), 0 4px 26px rgba(16,14,12,.55)"
+    }[p.heroGlow ?? "radiant"];
+    const rhythm = { compact: "clamp(40px,5vw,80px)", editorial: "clamp(64px,9vw,136px)", grand: "clamp(88px,13vw,200px)" }[p.sectionRhythm ?? "editorial"];
+    const band = { navy: ["var(--navy-800)", "#E8E1D5"], ink: ["var(--ink-900)", "#E8E1D5"], taupe: ["var(--taupe-300)", "var(--ink-900)"] }[p.bandMood ?? "navy"];
+    const photo = { natural: "none", tungsten: "saturate(1.08) sepia(.14) contrast(1.03)", deep: "contrast(1.14) saturate(.92) brightness(.94)" }[p.photoMood ?? "natural"];
+    root.style.setProperty("--tw-glow", glow);
+    root.style.setProperty("--tw-rhythm", rhythm);
+    root.style.setProperty("--tw-band", band[0]);
+    root.style.setProperty("--tw-band-text", band[1]);
+    root.style.setProperty("--tw-photo", photo);
+  }
+  componentDidUpdate() { this.applyTweaks(); }
+  startMarquee() {
+    const attach = () => {
+      const t = document.querySelector(".marquee-track");
+      if (!t) return setTimeout(attach, 250);
+      const io = new IntersectionObserver((es) => {
+        es.forEach((en) => { if (en.isIntersecting) { t.classList.add("is-running"); io.disconnect(); } });
+      }, { threshold: 0.15 });
+      io.observe(t);
+    };
+    attach();
+  }
+  componentDidMount() {
+    setTimeout(() => this.applyTweaks(), 0);
+    this.startMarquee();
+    const attach = () => {
+      const v = document.getElementById("carrom-video");
+      if (!v) return setTimeout(attach, 200);
+      v.muted = true;
+      v.playbackRate = 0.72;
+      v.addEventListener("play", () => { v.playbackRate = 0.72; });
+      let started = false;
+      const seek = () => { if (!started && v.currentTime < 4.9) { v.currentTime = 5; started = true; } };
+      v.addEventListener("loadedmetadata", seek);
+      v.addEventListener("timeupdate", seek);
+      if (v.readyState >= 1) seek();
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            seek();
+            const p = v.play(); if (p && p.catch) p.catch(() => {});
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+      io.observe(v);
+    };
+    attach();
+    this.componentDidMount_flip();
+  }
+  componentDidMount_flip() {
+    const attach = () => {
+      const cards = document.querySelectorAll('[data-flip="card"]');
+      if (!cards.length) return setTimeout(attach, 200);
+      cards.forEach((c) => {
+        if (c.dataset.flipBound) return;
+        c.dataset.flipBound = "1";
+        const inner = c.querySelector('[data-flip-inner]');
+        c.addEventListener("mouseenter", () => { inner.style.transform = "rotateY(180deg)"; });
+        c.addEventListener("mouseleave", () => { inner.style.transform = "rotateY(0deg)"; });
+        c.addEventListener("click", (e) => {
+          if (e.target.closest("a")) return;
+          const href = c.dataset.href;
+          if (href) window.location.href = href;
+        });
+      });
+    };
+    attach();
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

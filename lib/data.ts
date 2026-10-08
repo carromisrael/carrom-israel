@@ -8,9 +8,14 @@ export type Product = {
   image: string;
   blurb: string;
   thickness: string;
+  thicknessMm: number;
   frame: string;
+  frameSwatch: string;
   weight: string;
   size: string;
+  playArea: string;
+  badgeLabel: string;
+  tagline: string;
   backBg: string;
 };
 
@@ -24,9 +29,14 @@ export const products: Product[] = [
     blurb:
       "הדגם שמתחילים איתו: קל להזיז, קל לאחסן, ואותו משטח מייפל שמאפשר לשחק ברצינות מהסבב הראשון.",
     thickness: "8 מ״מ",
+    thicknessMm: 8,
     frame: "עץ צבוע כחול",
+    frameSwatch: "#1f47b8",
     weight: "כ־8 ק״ג",
     size: "86 × 86 ס״מ",
+    playArea: "72 × 72 ס״מ",
+    badgeLabel: "CLASSIC",
+    tagline: "הדגם שמתחילים איתו",
     backBg: "bg-[#1B3A5C]",
   },
   {
@@ -38,9 +48,14 @@ export const products: Product[] = [
     blurb:
       "ההמלצה שלנו לרוב הבתים — כבד מספיק כדי לשחק רציני, קל מספיק כדי לצאת איתו לגינה ובחזרה.",
     thickness: "12 מ״מ",
+    thicknessMm: 12,
     frame: "עץ צבוע שחור",
+    frameSwatch: "#151515",
     weight: "כ־11 ק״ג",
     size: "88 × 88 ס״מ",
+    playArea: "74 × 74 ס״מ",
+    badgeLabel: "PRO · מומלץ",
+    tagline: "ההמלצה שלנו לרוב הבתים",
     backBg: "bg-[#14100E]",
   },
   {
@@ -52,12 +67,33 @@ export const products: Product[] = [
     blurb:
       "עץ טיק מלא בגימור שמן, המשטח העבה והכבד בסדרה. הדיסקית עוצרת בדיוק במקום שהתכוונתם — לוח של טורנירים.",
     thickness: "16 מ״מ",
+    thicknessMm: 16,
     frame: "עץ טיק מלא",
+    frameSwatch: "#a8662e",
     weight: "כ־14 ק״ג",
     size: "89 × 89 ס״מ",
+    playArea: "74 × 74 ס״מ",
+    badgeLabel: "CHAMPION · טורניר",
+    tagline: "לוח של טורנירים",
     backBg: "bg-[#3A2A18]",
   },
 ];
+
+export const boxContents = [
+  { label: "דיסקיות", value: "9 לבנות, 9 שחורות, מלכה אדומה" },
+  { label: "סטרייקרים", value: "2" },
+  { label: "אבקת החלקה", value: "שקית 50 גרם" },
+  { label: "הוראות", value: "חוברת בעברית" },
+  { label: "רשתות כיסים", value: "מותקנות, ניתנות להחלפה" },
+] as const;
+
+export const shippingInfo = [
+  { label: "זמן אספקה", value: "3 ימי עסקים" },
+  { label: "משלוח", value: "עד הדלת, בכל הארץ" },
+  { label: "אחריות", value: "שנתיים על המסגרת והמשטח" },
+  { label: "החזרות", value: "14 יום, באריזה המקורית" },
+  { label: "מלאי", value: "בישראל" },
+] as const;
 
 export const storyBlocks = [
   {
@@ -113,21 +149,50 @@ export const events = [
 export const testimonials = [
   {
     quote:
-      "קנינו את ה-Pro לשבת אחת ומאז הוא לא ירד מהשולחן. הילדים מחכים לי בערב עם הסטרייקר ביד.",
-    author: "נועה ל׳",
-    role: "מודיעין",
-  },
-  {
-    quote:
       "הזמנתי לוח ליחידה. שלושה חודשים של מילואים, וזה הדבר היחיד שהוציא את כולם מהפלאפון.",
     author: "איתי ב׳",
     role: "בסיס בדרום",
+    image: "/assets/review-soldiers.png",
+    imageAlt: "חיילים משחקים קארום במועדון היחידה",
   },
   {
     quote:
-      "איכות העץ מרגישה כמו רהיט, לא כמו צעצוע. הגיע ארוז טוב, תוך שלושה ימי עסקים.",
-    author: "דני מ׳",
-    role: "חיפה",
+      "הכנסנו שני לוחות לחדר החוגים. ההנהלה מדווחת על פחות ריבים בהפסקות ועל ילדים שמחכים לתור.",
+    author: "מיטל ג׳",
+    role: "הנהלת בית ספר, נתניה",
+    image: "/assets/review-school.jpg",
+    imageAlt: "ילדים משחקים קארום בחדר החוגים של בית הספר",
+  },
+  {
+    quote:
+      "רכשנו 4 שולחנות לפאב שלנו. הטראפיק וכמות האנשים שבאו בעקבותם כיסו את העלות הזניחה שלהם מהר מאוד. מוצר מושלם.",
+    author: "רועי א׳",
+    role: "בעל פאב, פרדס חנה",
+    image: "/assets/review-pub.jpg",
+    imageAlt: "שולחנות קארום במרפסת של פאב בשקיעה",
+  },
+  {
+    quote:
+      "קנינו שולחן הביתה — אחלה זמן איכות משפחתי. אוהבים לשבת בערב לשחק ולשתף חוויות.",
+    author: "נועה ל׳",
+    role: "מודיעין",
+    image: "/assets/review-family.jpg",
+    imageAlt: "משפחה משחקת קארום בסלון",
+  },
+  {
+    quote:
+      "שמח שקניתי. סוף סוף יש לי משחק שכל הנכדים אוהבים לבוא לשחק איתי בו.",
+    author: "יעקב ש׳",
+    role: "ירושלים",
+    image: "/assets/review-grandpa.jpg",
+    imageAlt: "סבא משחק קארום עם נכדו בסלון",
+  },
+  {
+    quote: "אין כמו קמפינג משפחתי עם קארום.",
+    author: "שירן ק׳",
+    role: "רעננה",
+    image: "/assets/lifestyle-beach.jpeg",
+    imageAlt: "משפחה משחקת קארום על החוף בשקיעה",
   },
 ] as const;
 

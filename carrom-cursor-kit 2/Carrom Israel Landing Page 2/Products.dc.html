@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/colors.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/typography.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/radius.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/motion.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/tokens/base.css">
+<link rel="stylesheet" href="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/styles.css">
+<script src="_ds/carrom-israel-design-system-brand-1c034193-5c9e-4ce9-9f8a-bf5817dd3486/_ds_bundle.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@300;400;500;600;700&display=swap">
+<style>
+  body { margin:0; }
+  #dc-root [dir="rtl"] { --font-display: 'Suez One', serif; --font-body: 'Heebo', sans-serif; --font-ui: 'Heebo', sans-serif; }
+  a { color: var(--brand-primary); text-decoration: none; }
+  a:hover { color: var(--navy-800); }
+  .site-nav-desktop { display: flex; }
+  .site-burger { display: none; }
+  .site-drawer { display: none; }
+  @media (max-width: 900px) {
+    .site-nav-desktop { display: none !important; }
+    .site-burger { display: flex !important; }
+    .site-drawer.is-open { display: flex !important; }
+  }
+</style>
+<script>
+(function () {
+  function bind() {
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-burger]");
+      var d = document.querySelector(".site-drawer");
+      if (!d) return;
+      if (b) { d.classList.toggle("is-open"); return; }
+      if (d.classList.contains("is-open") && !e.target.closest(".site-drawer")) d.classList.remove("is-open");
+    });
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind); else bind();
+})();
+</script>
+</helmet>
+<div dir="rtl" style="background:var(--bg-page);font-family:var(--font-body);color:var(--text-body)">
+
+<header style="position:sticky;top:0;z-index:40;height:78px;display:flex;align-items:center;gap:clamp(16px,3vw,40px);padding:0 clamp(20px,5vw,64px);background:rgba(0,32,80,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,242,232,.18)">
+  <div style="flex:1;display:flex;align-items:center">
+    <button type="button" data-burger="1" class="site-burger" aria-label="תפריט" style="align-items:center;justify-content:center;width:46px;height:46px;background:transparent;border:1px solid rgba(247,242,232,.35);border-radius:var(--r-pill);color:var(--sand-50);cursor:pointer;padding:0">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+    </button>
+  </div>
+  <nav class="site-nav-desktop" style="align-items:center;justify-content:center;gap:clamp(14px,2vw,26px);font-family:var(--font-ui);font-size:15px;font-weight:600">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">דף הבית</a>
+    <a href="Products.dc.html" style="color:#FFFFFF;padding-bottom:3px;border-bottom:1px solid var(--blue-500)">הדגמים</a>
+    <a href="Accessories.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">אביזרים</a>
+    <a href="How%20To%20Play.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">איך משחקים</a>
+    <a href="Our%20Story.dc.html" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">הסיפור שלנו</a>
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html#contact" style="color:rgba(247,242,232,.82);padding-bottom:3px;border-bottom:1px solid transparent" style-hover="color:#FFFFFF;border-bottom:1px solid var(--blue-500)">צרו קשר</a>
+  </nav>
+  <div style="flex:1;display:flex;justify-content:flex-end;margin-inline-end:calc(-1 * clamp(20px,5vw,64px) + 8px)">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="display:flex;align-items:center"><img src="assets/logo-wordmark.png" alt="Carrom Israel" style="height:54px"></a>
+  </div>
+  <div class="site-drawer" style="position:absolute;top:78px;right:0;left:0;flex-direction:column;padding:8px clamp(20px,5vw,64px) 22px;background:rgba(0,32,80,.98);backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,242,232,.18)">
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">דף הבית</a>
+    <a href="Products.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:#FFFFFF;padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">הדגמים</a>
+    <a href="Accessories.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">אביזרים</a>
+    <a href="How%20To%20Play.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">איך משחקים</a>
+    <a href="Our%20Story.dc.html" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">הסיפור שלנו</a>
+    <a href="Carrom%20Israel%20Landing%20Page.dc.html#contact" style="font-family:var(--font-ui);font-size:19px;font-weight:600;color:rgba(247,242,232,.86);padding:14px 4px;border-bottom:1px solid rgba(247,242,232,.14)">צרו קשר</a>
+  </div>
+</header>
+
+<section style="background:var(--ink-900);padding:clamp(56px,7vw,96px) clamp(20px,5vw,64px) clamp(48px,6vw,80px)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center">
+    <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">שלושה דגמים · SISCAA</span>
+    <h1 style="font-family:var(--font-display);font-weight:400;font-size:clamp(38px,5vw,76px);line-height:1.02;letter-spacing:-.015em;color:var(--sand-50);margin:0;max-width:22ch">אותו משטח מייפל. שלוש מסגרות.</h1>
+    <p style="font:var(--type-body);color:rgba(247,242,232,.72);max-width:52ch;margin:0">כל לוח מגיע עם 19 דיסקיות, שני סטרייקרים, אבקת החלקה, הוראות בעברית ואחריות שנתיים. מלאי בישראל, משלוח 3 ימי עסקים.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px) clamp(32px,4vw,56px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)">
+    <a href="Model%20Classic.dc.html" style="display:block"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.ProductCard" name="Classic" badge="CLASSIC" badge-tone="classic" meta="8MM" price="{{ 590 }}" image="assets/board-classic.jpeg" hint-size="100%,540px"></x-import></a>
+    <a href="Model%20Pro.dc.html" style="display:block"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.ProductCard" name="Pro" badge="PRO" badge-tone="pro" meta="12MM" price="{{ 790 }}" featured="{{ true }}" image="assets/board-pro.jpeg" hint-size="100%,540px"></x-import></a>
+    <a href="Model%20Champion.dc.html" style="display:block"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.ProductCard" name="Champion" badge="CHAMPION" badge-tone="champion" meta="16MM · TOURNAMENT" price="{{ 990 }}" image="assets/board-champion-top.jpeg" hint-size="100%,540px"></x-import></a>
+  </div>
+</section>
+
+<section id="champion" style="padding:clamp(48px,6vw,88px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card)">
+      <img src="assets/board-champion-top.jpeg" alt="Champion" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)">16MM · TOURNAMENT</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(32px,3.4vw,52px);line-height:1.08;letter-spacing:-.015em;color:var(--text-display);margin:0">Champion</h2>
+      <p style="font:var(--type-body);max-width:48ch;margin:0">מסגרת עץ טיק מלא בגימור שמן, המשטח העבה והכבד ביותר בסדרה. הדיסקית עוצרת בדיוק במקום שהתכוונתם — ולכן זה הלוח של הטורנירים ושל מי שמשחק כל שבוע.</p>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.SpecTable" rows="{{ specChampion }}" hint-size="100%,240px"></x-import>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:4px">
+        <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.PriceTag" amount="{{ 990 }}" size="lg" hint-size="110px,44px"></x-import>
+        <a href="Model%20Champion.dc.html" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="primary" size="lg" hint-size="150px,56px">לעמוד הדגם</x-import></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pro" style="background:var(--bg-band);padding:clamp(48px,6vw,88px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-700)">12MM</span>
+        <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Badge" tone="pro" size="sm" hint-size="120px,26px">RECOMMENDED</x-import>
+      </div>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(32px,3.4vw,52px);line-height:1.08;letter-spacing:-.015em;color:var(--ink-900);margin:0">Pro</h2>
+      <p style="font:var(--type-body);color:var(--ink-700);max-width:48ch;margin:0">מסגרת שחורה, אותו משטח מייפל, שני קילו פחות. זה הדגם שאנחנו ממליצים לרוב הבתים: כבד מספיק כדי לשחק רציני, קל מספיק כדי להזיז אותו לגינה ובחזרה.</p>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.SpecTable" rows="{{ specPro }}" hint-size="100%,240px"></x-import>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:4px">
+        <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.PriceTag" amount="{{ 790 }}" size="lg" hint-size="110px,44px"></x-import>
+        <a href="Model%20Pro.dc.html" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="primary" size="lg" hint-size="150px,56px">לעמוד הדגם</x-import></a>
+      </div>
+    </div>
+    <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card)">
+      <img src="assets/board-pro.jpeg" alt="Pro" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover">
+    </div>
+  </div>
+</section>
+
+<section id="classic" style="padding:clamp(48px,6vw,88px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(16,14,12,.12);box-shadow:var(--shadow-card)">
+      <img src="assets/board-classic.jpeg" alt="Classic" style="display:block;width:100%;aspect-ratio:3/4;object-fit:cover">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted)">8MM</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(32px,3.4vw,52px);line-height:1.08;letter-spacing:-.015em;color:var(--text-display);margin:0">Classic</h2>
+      <p style="font:var(--type-body);max-width:48ch;margin:0">מסגרת כחולה ולוח דק יותר — הדגם שמתחילים איתו. אותם קווים, אותן דיסקיות, אותו סבב של עשרים דקות, במשקל שילד בן שש מרים לבד.</p>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.SpecTable" rows="{{ specClassic }}" hint-size="100%,240px"></x-import>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:4px">
+        <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.PriceTag" amount="{{ 590 }}" size="lg" hint-size="110px,44px"></x-import>
+        <a href="Model%20Classic.dc.html" style="display:inline-flex"><x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="primary" size="lg" hint-size="150px,56px">לעמוד הדגם</x-import></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--ink-900);color:#E8E1D5;padding:clamp(56px,7vw,104px) clamp(20px,5vw,64px)">
+  <div style="max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">מה יש בקופסה</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,2.8vw,42px);letter-spacing:-.015em;color:var(--sand-50);margin:0">הכול בפנים, מהמשלוח הראשון</h2>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.SpecTable" rows="{{ boxContents }}" tone="invert" hint-size="100%,280px"></x-import>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span style="font-family:var(--font-ui);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">משלוח ואחריות</span>
+      <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(28px,2.8vw,42px);letter-spacing:-.015em;color:var(--sand-50);margin:0">לפני שמזמינים</h2>
+      <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.SpecTable" rows="{{ shipping }}" tone="invert" hint-size="100%,280px"></x-import>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <x-import component-from-global-scope="CarromIsraelDesignSystem_1c0341.Button" variant="gold" size="md" hint-size="150px,48px">שאלה על דגם? כתבו לנו</x-import>
+        <a href="How%20To%20Play.dc.html" style="font-family:var(--font-ui);font-size:15px;font-weight:600;color:var(--sand-50);align-self:center">איך משחקים ←</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink-900);color:#E8E1D5;padding:clamp(48px,6vw,80px) clamp(20px,5vw,64px) 32px;border-top:1px solid rgba(247,242,232,.18)">
+  <div style="max-width:1360px;margin:0 auto;display:flex;gap:clamp(32px,5vw,64px);flex-wrap:wrap;justify-content:space-between">
+    <div style="display:flex;flex-direction:column;gap:20px;max-width:34ch">
+      <img src="assets/logo-wordmark.png" alt="Carrom Israel" style="height:32px">
+      <p style="font:var(--type-body);color:rgba(247,242,232,.72);margin:0">מייבאים קארום בורד של SISCAA מהודו, מתאימים אותו לבית הישראלי, ושולחים עד הדלת.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:var(--font-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">חנות</span>
+      <a href="Model%20Champion.dc.html" style="font:var(--type-body);color:var(--sand-50)">Champion</a>
+      <a href="Model%20Pro.dc.html" style="font:var(--type-body);color:var(--sand-50)">Pro</a>
+      <a href="Model%20Classic.dc.html" style="font:var(--type-body);color:var(--sand-50)">Classic</a>
+      <a href="Accessories.dc.html" style="font:var(--type-body);color:var(--sand-50)">אביזרים</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:var(--font-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">מידע</span>
+      <a href="How%20To%20Play.dc.html" style="font:var(--type-body);color:var(--sand-50)">איך משחקים</a>
+      <a href="How%20To%20Play.dc.html#rules" style="font:var(--type-body);color:var(--sand-50)">חוקי המשחק</a>
+      <a href="Carrom%20Israel%20Landing%20Page.dc.html#events" style="font:var(--type-body);color:var(--sand-50)">אירועים</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-family:var(--font-ui);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,242,232,.55)">צרו קשר</span>
+      <a href="mailto:CarromIsrael@gmail.com" style="font:var(--type-body);color:var(--sand-50);direction:ltr">CarromIsrael@gmail.com</a>
+      <a href="https://wa.me/972524845695" style="font:var(--type-body);color:var(--sand-50)">וואטסאפ</a>
+    </div>
+  </div>
+  <div style="max-width:1360px;margin:clamp(40px,5vw,64px) auto 0;padding-top:20px;border-top:1px solid rgba(247,242,232,.18);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--font-ui);font-size:13px;color:rgba(247,242,232,.55)">
+    <span>© 2026 Carrom Israel · כל הזכויות שמורות</span>
+    <span style="letter-spacing:.18em;text-transform:uppercase">From India with Love</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/972524845695?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94" target="_blank" rel="noopener" style="position:fixed;bottom:22px;left:22px;z-index:60;display:flex;align-items:center;gap:10px;background:#0F7A46;color:#FFFFFF;font-family:var(--font-ui);font-size:15px;font-weight:600;padding:14px 22px;border-radius:var(--r-pill);box-shadow:0 10px 30px -12px rgba(16,14,12,.5)" style-hover="background:#0B6239;color:#FFFFFF">שאלה? וואטסאפ</a>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      specChampion: [
+        {label:"עובי הלוח", value:"16 מ״מ"},
+        {label:"מסגרת", value:"עץ טיק מלא, גימור שמן"},
+        {label:"מידות חוץ", value:"89 × 89 ס״מ"},
+        {label:"שטח משחק", value:"74 × 74 ס״מ"},
+        {label:"משקל", value:"כ־14 ק״ג"}
+      ],
+      specPro: [
+        {label:"עובי הלוח", value:"12 מ״מ"},
+        {label:"מסגרת", value:"עץ צבוע שחור"},
+        {label:"מידות חוץ", value:"88 × 88 ס״מ"},
+        {label:"שטח משחק", value:"74 × 74 ס״מ"},
+        {label:"משקל", value:"כ־11 ק״ג"}
+      ],
+      specClassic: [
+        {label:"עובי הלוח", value:"8 מ״מ"},
+        {label:"מסגרת", value:"עץ צבוע כחול"},
+        {label:"מידות חוץ", value:"86 × 86 ס״מ"},
+        {label:"שטח משחק", value:"72 × 72 ס״מ"},
+        {label:"משקל", value:"כ־8 ק״ג"}
+      ],
+      boxContents: [
+        {label:"דיסקיות", value:"9 לבנות, 9 שחורות, מלכה אדומה"},
+        {label:"סטרייקרים", value:"2"},
+        {label:"אבקת החלקה", value:"שקית 50 גרם"},
+        {label:"הוראות", value:"חוברת בעברית"},
+        {label:"רשתות כיסים", value:"מותקנות, ניתנות להחלפה"}
+      ],
+      shipping: [
+        {label:"זמן אספקה", value:"3 ימי עסקים"},
+        {label:"משלוח", value:"עד הדלת, בכל הארץ"},
+        {label:"אחריות", value:"שנתיים על המסגרת והמשטח"},
+        {label:"החזרות", value:"14 יום, באריזה המקורית"},
+        {label:"מלאי", value:"בישראל"}
+      ]
+    };
+  }
+}
+
+</script>
+</body>
+</html>
