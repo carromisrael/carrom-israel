@@ -75,8 +75,8 @@ Entire site is `dir="rtl"`. Set on `<html>` in root layout. Use Tailwind logical
 2. **Hero** (`#top`) — full-bleed bg video/image, "Carrom - Israel" headline, CTA button
 3. **What is Carrom** (`#what`) — 2-col text + looping video, stat row (2–4 players / 19 coins / 20 min / 6+ age)
 4. **Models** (`#models`) — 3 flip cards (Classic ₪590 / Pro ₪790 / Champion ₪990), flips on hover to show specs + "add to cart"
-5. **Story** (`#story`) — brand story (3 reservists founding story) + 3 lifestyle feature tiles (camping/beach/bar)
-6. **Events** (`#events`) — dark section, list of upcoming meetups/tournaments + "host an event" CTA
+5. **Story** (`#story`) — one-paragraph summary of Eliya's story + link to `/our-story` + photo (placeholder). Built 2026-10-08.
+6. **Events** (`#events`) — dark section, cards for upcoming meetups/tournaments, sign-in placeholder button (does nothing yet). Rebuilt 2026-10-08.
 7. **Trust** (`#trust`) — infinite marquee of testimonials
 8. **Footer** (`#contact`) — logo, shop links, info links, contact (email/WhatsApp/Instagram)
 9. **Floating WhatsApp button** — fixed bottom-start
@@ -85,14 +85,14 @@ Entire site is `dir="rtl"`. Set on `<html>` in root layout. Use Tailwind logical
 1. Header (variant with "סל"/cart button instead of hero CTA)
 2. Hero band — "אותו משטח מייפל. שלוש מסגרות."
 3. 3-card product grid (Champion / Pro / Classic, Pro marked "featured")
-4. Per-model detail sections (image + spec table + price + "add to cart") × 3
+4. Per-model detail sections (image + spec table + price + "add to cart") × 3, then an **Accessories** section (`#accessories`): 9 items grid + maintenance kit + WhatsApp CTA. Added 2026-10-08.
 5. "What's in the box" + "Shipping & warranty" spec tables (dark section)
 6. Footer
 
-### `/how-to-play` — designed in the friend's handoff (`How To Play.dc.html`). Not built yet.
+### `/how-to-play` — built 2026-10-08 from the friend's handoff (`How To Play.dc.html`). Sections: hero, quick start, setup, full rules, mistakes, FAQ, CTA band.
 
 ### Other pages in the friend's handoff
-- `Our Story.dc.html`, `Accessories.dc.html` — not built yet (Our Story is task 2, next)
+- `Our Story.dc.html` — built 2026-10-08 as `/our-story`. `Accessories.dc.html` — built 2026-10-08 as a section on `/products`, not its own page.
 - Per-model pages: `Model Classic.dc.html`, `Model Pro.dc.html`, `Model Champion.dc.html` — superseded; built as anchor sections within `/products` instead of separate pages (see `app/products/page.tsx`)
 
 ### `/online` — online carrom vs. computer (trial). Built outside the original plan; lives in `app/online/` + `components/game/`.
@@ -128,23 +128,23 @@ Every board ships with: 19 coins (9+9+queen), 2 strikers, powder, Hebrew instruc
 
 - [x] **Phase 0 — Scaffold**: `create-next-app` (TS, App Router, Tailwind), install & init shadcn/ui, configure fonts + color/spacing theme tokens, copy handoff assets into `/public`.
 - [x] **Phase 1 — Home page UI**: build all 8 sections above as static components, no interactivity beyond hover/flip/marquee.
-- [ ] **Phase 1b — Home redesign** (current): rework sections one at a time (hero, `#what`, trust done; models in progress; story, events, footer next). Status table in `ACTIVE_TASK.md`.
+- [ ] **Phase 1b — Home redesign** (current): rework sections one at a time. Done: hero, `#what`, story (excerpt), events (rebuilt 2026-10-08), trust. In progress: models (dev toggles still in place). Next: footer. Status table in `ACTIVE_TASK.md`.
 - [x] **Phase 2 — Products page UI**: `/products` built from `Products.dc.html` with our design system — product grid + per-model detail + shipping info. Done 2026-10-08, see `ACTIVE_TASK.md` Task 1.
 - [x] **Phase 2b — Our Story page** (task 2): `/our-story` built from `Our Story.dc.html`; home `#story` now has a short excerpt linking to it. Done 2026-10-08.
 - [ ] **Phase 2c — Cleanup** (task 3, after 2 + 2b): one `design.md`, remove `carrom-cursor-kit 2/` once ported, drop unused variants/toggles/assets/docs. Details in `ACTIVE_TASK.md`.
-- [ ] **Phase 3 — How-to-play page**: build from `How To Play.dc.html`.
+- [x] **Phase 3 — How-to-play page**: built 2026-10-08 from `How To Play.dc.html`.
 - [ ] **Phase 4 — Purchase flow**: cart state, checkout page, pick + integrate a payment provider (Stripe / Cardcom / Tranzila / PayPlus).
 - [ ] **Phase 5 — Supabase**: orders table, maybe events RSVP + contact form storage.
 - [ ] **Phase 6 — Deploy**: connect repo to Vercel, env vars, custom domain.
 
-**Currently: Phases 2 and 2b done; Phase 2c (cleanup) is next. UI only.**
+**Currently: Phases 2, 2b and 3 done. Phase 2c (cleanup) is next. UI only.**
 
 ---
 
 ## 7. Open Questions / Decisions Needed
 
 1. ~~`/how-to-play` has no design~~ — resolved: the friend's handoff has `How To Play.dc.html`.
-2. Real phone number for WhatsApp link (currently placeholder `972000000000` in the handoff)?
+2. Confirm the WhatsApp number. `lib/whatsapp.ts` uses the friend's `972524845695` for now. Several links still hardcode the old `972000000000` placeholder (see `ACTIVE_TASK.md`).
 3. Payment provider for Phase 4 (Stripe now supports Israel, or a local one like Cardcom/Tranzila/PayPlus)?
 4. Real Instagram URL for footer (currently a placeholder link)?
 
